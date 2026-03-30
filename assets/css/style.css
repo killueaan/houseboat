@@ -1,31 +1,37 @@
 @font-face {
 	font-family: 'Geist';
 	font-weight: 200;
-	src: url('/assets/fonts/Geist/static/Geist-ExtraLight.ttf');
+	src: url('../fonts/Geist/static/Geist-ExtraLight.ttf');
 }
 
 @font-face {
 	font-family: 'Geist';
 	font-weight: 300;
-	src: url('/assets/fonts/Geist/static/Geist-Light.ttf');
+	src: url('../fonts/Geist/static/Geist-Light.ttf');
 }
 
 @font-face {
 	font-family: 'Geist';
 	font-weight: 400;
-	src: url('/assets/fonts/Geist/static/Geist-Regular.ttf');
+	src: url('../fonts/Geist/static/Geist-Regular.ttf');
 }
 
 @font-face {
 	font-family: 'Geist';
 	font-weight: 500;
-	src: url('/assets/fonts/Geist/static/Geist-Medium.ttf');
+	src: url('../fonts/Geist/static/Geist-Medium.ttf');
 }
 
 @font-face {
 	font-family: 'Geist';
 	font-weight: 600;
-	src: url('/assets/fonts/Geist/static/Geist-SemiBold.ttf');
+	src: url('../fonts/Geist/static/Geist-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: 'Geist';
+	font-weight: 700;
+	src: url('./assets/fonts/Geist/static/Geist-Bold.ttf');
 }
 
 * {
@@ -394,7 +400,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 19px 32px;
+	padding: 14px 32px;
 	border-radius: 24px;
 	background: #00000040;
 	backdrop-filter: blur(7.5px);
@@ -402,7 +408,7 @@ body {
 }
 
 .logo {
-	font-weight: 700;
+	font-weight: 600;
 	font-size: 24px;
 	color: rgba(255, 255, 255, 1);
 }
@@ -418,7 +424,7 @@ body {
 
 .nav__link {
 	font-size: 16px;
-	font-weight: 300;
+	font-weight: 200;
 	color: white;
 	letter-spacing: 4%;
 	text-transform: uppercase;
@@ -1442,7 +1448,7 @@ span.hover_span {
 .about_info__card p {
 	font-weight: 400;
 	font-size: 18px;
-	line-height: 120%;
+	line-height: 140%;
 	margin-top: 2px;
 }
 
@@ -2710,7 +2716,7 @@ p.questions_text {
 			rgba(13, 17, 34, 0.2) 50%,
 			rgba(0, 16, 56, 0.5) 60%,
 			rgba(0, 16, 56, 0.8) 100%);
-	border-radius: 32px;
+	border-radius: 24px;
 	z-index: 1;
 }
 
@@ -2845,6 +2851,7 @@ p.questions_text {
 	display: flex;
 	flex-direction: row;
 	gap: 12px;
+	padding-bottom: 10px;
 }
 
 .form_btn {
