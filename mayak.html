@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>О хаусботах – Houseboat</title>
+    <script src="./assets/js/burger.js" defer></script>
+    <link rel="stylesheet" id="houseboat-style-css" href="./assets/css/style.css" media="all">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./assets/js/slider.js" defer></script>
+    <script src="./assets/js/slider_news.js" defer></script>
+</head>
+
+<body
+    class="wp-singular page-template page-template-template-parts page-template-pages page-template-company-page-template page-template-template-partspagescompany-page-template-php page page-id-15 wp-theme-houseboat">
+    <div id="page" class="site">
+        <header class="header">
+            <div class="container header__inner">
+                <a class="logo" href="/">HOUSE-BOAT.PRO</a>
+
+                <nav class="nav" id="nav" aria-label="Основная навигация">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/projects.html">Проекты</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/about.html">О хаусботах</a>
+                        </li>
+                        <li class="nav__item"><a class="nav__link" href="/business.html">B2B</a></li>
+                        <li class="nav__item"><a class="nav__link" href="/contacts.html">Контакты</a></li>
+                        <li class="nav__item"><a class="nav__link" href="/news.html">Новости</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__right">
+                    <a class="header__phone" href="tel:+79998500149">+7 (999) 850-01-49</a>
+
+                    <!-- Telegram -->
+                    <a class="icon-btn icon-btn--solid" href="#" aria-label="Telegram">
+                        <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="">
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a class="icon-btn icon-btn--outline" href="#" aria-label="WhatsApp">
+                        <img class="icon-btn__icon" src="./assets/icons/wa.svg" alt="">
+                    </a>
+                    <button class="burger" id="burgerBtn" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main id="primary" class="site-main">
+            <!-- Главный экран -->
+            <section style="background-image: url(./assets/images/banners/about.png);"
+                class="banner flex_row radius_banner">
+                <div class="container banner_content__pages btm_s_pad">
+                    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                        <ol class="breadcrumbs__list">
+                            <li class="breadcrumbs__item">
+                                <a class="breadcrumbs__link" href="/index.html">ГЛАВНАЯ</a>
+                            </li>
+                            &nbsp;
+                            <div class="breadcrumbs__item"> >
+                            </div> &nbsp;
+                            <li class="breadcrumbs__item" aria-current="page">Проекты</li>
+                            <div class="breadcrumbs__item"> >
+                            </div> &nbsp;
+                            <li class="breadcrumbs__item" aria-current="page">Маяк-1</li>
+                        </ol>
+                    </nav>
+
+                    <h1 class="banner__title">Маяк-1</h1>
+                </div>
+            </section>
+
+            <!-- plan -->
+            <section class="plan_project--section container top_pad">
+
+                <div class="plan_project card">
+                    <div class="plan_project_top">
+                        <div class="plan_project-info">
+                            <h3 class="plan_project-title title_plan">Планировка хаусбота</h3>
+                            <p class="plan_project-subtitle">На макете представлена планировка проекта МАЯК-1</p>
+                        </div>
+                        <div class="plan_project_buttons card gap_16">
+                            <a href="" class="second_btn active"><button>1 этаж</button></a>
+                            <a href="" class="second_btn"><button>2 этаж</button></a>
+                        </div>
+                    </div>
+                    <div class="plan_project-img">
+                        <img src="assets/images/mayak/plan.png" alt="План" id="img">
+                        <div class="increase_picture" id="btn">
+
+                            <svg width="45" height="45" viewBox="0 0 45 45" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="45" height="45" rx="22.5" fill="#0D1122" />
+                                <path
+                                    d="M25.7021 29.5H27.4149C27.9679 29.5 28.4983 29.2803 28.8893 28.8893C29.2803 28.4983 29.5 27.9679 29.5 27.4149V25.7021M29.5 19.2979V17.5851C29.5 17.0321 29.2803 16.5017 28.8893 16.1107C28.4983 15.7197 27.9679 15.5 27.4149 15.5H25.7021M19.2979 29.5H17.5851C17.0321 29.5 16.5017 29.2803 16.1107 28.8893C15.7197 28.4983 15.5 27.9679 15.5 27.4149V25.7021M15.5 19.2979V17.5851C15.5 17.0321 15.7197 16.5017 16.1107 16.1107C16.5017 15.7197 17.0321 15.5 17.5851 15.5H19.2979"
+                                    stroke="#EAB789" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                        </div>
+
+                        <div id="modal" class="modal">
+                            <img class="modal-content" id="imgFull">
+                            <div id="caption"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="plan_section container grid-3 ">
+                <div class="specifications card">
+                    <h4 class="specifications-title title_plan">Характеристики</h4>
+                    <div class="specifications_blocks grid-4 gap_16">
+                        <div class="specification_block">
+                            <p class="specification_block-subtitle">Площадь</p>
+                            <h3 class="specification_block-value">136,23 м²</h3>
+                        </div>
+                        <div class="specification_block">
+                            <p class="specification_block-subtitle">Количество кают</p>
+                            <h3 class="specification_block-value">5 кают</h3>
+                        </div>
+                        <div class="specification_block">
+                            <p class="specification_block-subtitle">Площадь рубки</p>
+                            <h3 class="specification_block-value">136,23 м²</h3>
+                        </div>
+                        <div class="specification_block">
+                            <p class="specification_block-subtitle">Площадь палубы</p>
+                            <h3 class="specification_block-value">136,23 м²</h3>
+                        </div>
+                        <div class="specification_block">
+                            <p class="specification_block-subtitle">Количество этажей</p>
+                            <h3 class="specification_block-value">1 этаж</h3>
+                        </div>
+                        <div class="specification_block">
+                            <p class="specification_block-subtitle">Высота панели</p>
+                            <h3 class="specification_block-value">7,62 м</h3>
+                        </div>
+                        <div class="specification_block">
+                            <p class="specification_block-subtitle">Ширина панели</p>
+                            <h3 class="specification_block-value">7,62 м</h3>
+                        </div>
+                        <div class="specification_block">
+                            <p class="specification_block-subtitle">Количество этажей</p>
+                            <h3 class="specification_block-value">1 этаж</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="price card pad_24">
+                    <div class="price_block">
+                        <div class="max-price">
+                            <p class="price-title title_plan">Стоимость</p>
+                            <h3 class="price-value">10 000 000 ₽</h3>
+                        </div>
+                        <div class="min_price">
+                            <p class="min_price-title">Цена за м²</p>
+                            <h3 class="min_price-value">100 000 ₽/м²</h3>
+                        </div>
+                    </div>
+
+                    <a href="#"><button>Оставить заявку на покупку</button></a>
+                </div>
+            </section>
+            <section class="info_blocks container grid-2 gap_16 btm_pad40">
+                <div class="description card pad_24">
+                    <h3 class="description-title ">Апартаменты бизнес-класса</h3>
+                    <p class="description-subtitle">
+                        Наши хаусботы — это плавучие апартаменты с продуманной планировкой и высоким уровнем
+                        комфорта.
+                        Здесь есть всё для комфортной жизни: просторные комнаты, современные инженерные системы и
+                        уютные
+                        зоны отдыха, которые&nbsp;делают пребывание на воде приятным и удобным.</p>
+                </div>
+                <div class="description card pad_24">
+                    <h3 class="description-title ">Полная независимость на воде</h3>
+                    <p class="description-subtitle">
+                        Наши хаусботы автономны и оснащены собственными источники электроэнергии, системами очистки
+                        и
+                        подачи воды, а также эффективными системами отопления и вентиляции. При этом предусмотрена
+                        возможность использования береговых коммуникаций в портах и яхт-клубах.</p>
+                </div>
+            </section>
+
+            <section class="section news_company__v1 container top_pad40 btm_pad40">
+                <div class="title_content gap_4">
+                    <p class="subtitle">Посмотрите дом онлайн</p>
+                    <h2 class="title">галерея</h2>
+                </div>
+                <div class="swiper slider_block__wrapper">
+                    <div class="slider_block__wrapper--content swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 2">
+                        </div>
+                    </div>
+
+                    <div class="slider_tabs">
+                        <button class="slider_tabs__tab">Интерьер</button>
+                        <button class="slider_tabs__tab active">Экстерьер</button>
+                    </div>
+
+                    <div class="swiper-button-prev"><svg width="24" height="24" viewBox="0 0 18 15" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.5564 8.36401C17.1086 8.36401 17.5564 7.9163 17.5564 7.36401C17.5564 6.81173 17.1086 6.36401 16.5564 6.36401V7.36401V8.36401ZM0.292894 6.65691C-0.0976295 7.04743 -0.0976295 7.6806 0.292894 8.07112L6.65686 14.4351C7.04738 14.8256 7.68054 14.8256 8.07107 14.4351C8.46159 14.0446 8.46159 13.4114 8.07107 13.0209L2.41421 7.36401L8.07107 1.70716C8.46159 1.31664 8.46159 0.68347 8.07107 0.292946C7.68054 -0.0975785 7.04738 -0.0975785 6.65686 0.292946L0.292894 6.65691ZM16.5564 7.36401V6.36401L1 6.36401V7.36401V8.36401L16.5564 8.36401V7.36401Z"
+                                fill="#1B1E18" />
+                        </svg>
+                    </div>
+
+                    <div class="swiper-button-next"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1 6.36401C0.447715 6.36401 0 6.81173 0 7.36401C0 7.9163 0.447715 8.36401 1 8.36401V7.36401V6.36401ZM17.2635 8.07112C17.654 7.6806 17.654 7.04743 17.2635 6.65691L10.8995 0.292946C10.509 -0.0975785 9.87581 -0.0975785 9.48528 0.292946C9.09476 0.68347 9.09476 1.31664 9.48528 1.70716L15.1421 7.36401L9.48528 13.0209C9.09476 13.4114 9.09476 14.0446 9.48528 14.4351C9.87581 14.8256 10.509 14.8256 10.8995 14.4351L17.2635 8.07112ZM1 7.36401V8.36401H16.5563V7.36401V6.36401L1 6.36401V7.36401Z"
+                                fill="#1B1E18" />
+                        </svg>
+                    </div>
+
+                    <div class="swiper_counter">
+                        <span class="current">1</span>/<span class="total">14</span>
+                    </div>
+
+                    <button class="slider_block--fullscreen" aria-label="На весь экран">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <section class="section news_company__v1 container top_pad40 btm_pad40">
+                <div class="title_content gap_4">
+                    <p class="subtitle">Технологии проекта</p>
+                    <h2 class="title">ТЕХНОЛОГИИ НА ВОДЕ</h2>
+                </div>
+                <div class="swiper news-company-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="news_company__v1--card card">
+                                <div class="news_company__v1--image">
+                                    <img class="cover" src="./assets/images/mayak/1.png" alt="Индивидуальный подход">
+                                </div>
+                                <div class="news_company__v1--text">
+                                    <h3>ПЛАВУЧЕЕ ОСНОВАНИЕ</h3>
+                                    <p>Прочность корпуса и мореходные качества<br> понтона обеспечивают его безопасную
+                                        эксплуатацию
+                                        на реках, озёрах и бухтах,<br>
+                                        при удалении от берега до 3 000 м и высоте волны не более 0,4 метра.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="news_company__v1--card card">
+                                <div class="news_company__v1--image">
+                                    <img class="cover" src="./assets/images/mayak/2.png" alt="Гарантия и сервис">
+                                </div>
+                                <div class="news_company__v1--text">
+                                    <h3>ПРОЧНЫЙ КАРКАС</h3>
+                                    <p>Каркасы производятся по голандским технологиям и исключительно из<br>
+                                        европейского сырья,
+                                        используемого в судостроении, что лишь подчеркивает<br> высокое качество
+                                        конечной продукции.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="news_company__v1--card card">
+                                <div class="news_company__v1--image">
+                                    <img class="cover" src="./assets/images/mayak/3.png" alt="Надежность и качество">
+                                </div>
+                                <div class="news_company__v1--text">
+                                    <h3>ИЗЯЩНЫЙ ИНТЕРЬЕР</h3>
+                                    <p>В интерьере хаусботов используются натуральные материалы премиум-класса:
+                                        керамогранит,
+                                        искусственный камень, ламинированные компакт-плиты и<br> палубное покрытие из
+                                        тикового
+                                        дерева.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section news_company__v1 container top_pad40 btm_pad40">
+                <div class="title_content gap_4">
+                    <p class="subtitle">Посмотрите дом онлайн</p>
+                    <h2 class="title">3D-тур</h2>
+                </div>
+                <img src="assets/images/mayak/house.svg" alt="">
+            </section>
+
+            <section class="section text_block__v2 container top_pad40 btm_pad40 ">
+                <div class="title_content gap_4">
+                    <p class="subtitle">Особенности планировки</p>
+                    <h2 class="title">УЮТ В каждой КАЮТе</h2>
+                </div>
+                <div class="mayak text_block__v2--content grid-3 gap_16">
+                    <div class="text_block__v2--card card">
+                        <h3>УЮТНАЯ ГОСТИНАЯ</h3>
+                        <p>Гостиная оформлена в современном стиле с использованием натуральных материалов и мягких
+                            текстур. Большие окна наполняют пространство светом, создавая атмосферу&nbsp;тепла и
+                            уюта.
+                            Это идеальное место для&nbsp;уютных вечеров с семьей и друзьями.</p>
+                    </div>
+                    <div class="text_block__v2--card card span-2">
+                        <img class="abs-cover" src="./assets/images/mayak/v2_2.png" alt="КАКИМИ БЫЛИ">
+                    </div>
+                    <div class="text_block__v2--card card span-2">
+                        <img class="abs-cover" src="./assets/images/mayak/v2_1.png" alt="КАКИЕ СЕЙЧАС">
+                    </div>
+                    <div class="text_block__v2--card card">
+                        <h3>КУХНЯ НА КОРАБЛЕ</h3>
+                        <p>Современная кухня на хаусботе оборудована встроенной техникой, удобными рабочими
+                            поверхностями и продуманной системой хранения. Эргономичная планировка обеспечивает
+                            комфортное приготовление пищи даже в ограниченном пространстве.</p>
+                    </div>
+                    <div class="text_block__v2--card card">
+                        <h3>УЛИЧНЫЙ ОТДЫХ</h3>
+                        <p>Палубы первого этажа и просторная&nbsp;верхняя терраса создают идеальные зоны&nbsp;для
+                            отдыха
+                            на свежем воздухе. Здесь&nbsp;можно устраивать встречи с друзьями,&nbsp;семейные ужины или
+                            просто наслаждаться панорамными видами и природой вокруг.</p>
+                    </div>
+                    <div class="text_block__v2--card card span-2">
+                        <img class="abs-cover" src="./assets/images/mayak/v2_3.png" alt="КАКИМИ БЫЛИ">
+                    </div>
+                </div>
+            </section>
+            <div class="top_pad40 btm_pad container">
+                <section style="background-image: url(./assets/images/projects/form.png); border-radius: 30px;"
+                    class="section text_block__v7">
+                    <div class="text_block__v7--content">
+                        <div class="text_block__v7--title">
+                            <h2>Рассчитать <span class="accent-form">стоимость и сроки</span><br>
+                                строительства хаусбота</h2>
+                            <p>Наши специалисты готовы ответить на все возникшие вопросы и провести бесплатную
+                                консультацию.
+                            </p>
+                        </div>
+                        <form action="#" class="text_block__v7--form form_section">
+                            <div class="form_section__fields">
+                                <div class="form_group">
+                                    <label for="name" class="form_label">Ваше имя <span
+                                            class="form-span">*</span></label>
+                                    <input type="text" class="form_input" name="name" placeholder="Иван Иванов"
+                                        required>
+                                </div>
+                                <div class="form_group">
+                                    <label for="tel" class="form_label">Телефон для связи <span
+                                            class="form-span">*</span></label>
+                                    <input type="text" class="form_input" name="tel" placeholder="+7 (000) 000-00-00"
+                                        required>
+                                </div>
+                                <div class="form_group">
+                                    <label for="tel" class="form_label">Электронная почта</label>
+                                    <input type="text" class="form_input" name="email" placeholder="example@ya.ru"
+                                        required>
+                                </div>
+
+                                <button class="form_section__btn">Оставить заявку</button>
+
+                                <div class="form_checkbox_wrapper">
+                                    <label class="form_checkbox">
+                                        <input class="form_checkbox__input" type="checkbox" name="agreement" id=""
+                                            required>
+                                        <span class="form-checkbox__text">Я согласен(а) на обработку персональных
+                                            данных</span>
+                                    </label>
+                                </div>
+
+                                <p class="form_section__policy">Нажимая на кнопку, вы соглашаетесь с Политикой
+                                    обработки
+                                    персональных данных</p>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer footer--figma">
+            <div class="container footer__grid">
+                <!-- 1) Бренд + контакты + бейдж -->
+                <div class="footer__brand">
+                    <div class="footer__brand-top">
+                        <div class="footer__brand-name">HOUSE-BOAT.PRO</div>
+                        <div class="footer__brand-tag">Хаусботы и дома на воде</div>
+                    </div>
+
+                    <div class="footer__contacts">
+                        <a class="footer__contact" href="#">
+                            <img class="footer__icon" src="./assets/icons/footer_tg.svg" alt="">
+                            Телеграм
+                        </a>
+
+                        <a class="footer__contact" href="tel:+79998500149">
+                            <img class="footer__icon" src="./assets/icons/footerPhone.svg" alt="">
+                            +7 (999) 850-01-49
+                        </a>
+
+                        <a class="footer__contact" href="mailto:mz@cboat.ru">
+                            <img class="footer__icon" src="./assets/icons/footerEmail.svg" alt="">
+                            mz@cboat.ru
+                        </a>
+                    </div>
+
+                    <div class="footer__devbadge remove">
+                        <img class="footer__devlogo" src="./assets/images/logo/ontape.png" alt="ONTAPE DESIGN">
+                    </div>
+                </div>
+
+                <!-- 3) Проекты -->
+                <div class="footer__col">
+                    <div class="footer__title">ПРОЕКТЫ</div>
+                    <a class="footer__link" href="/mayak.html">MAYAK-1</a>
+                    <a class="footer__link" href="/mayak.html">MAYAK-2</a>
+                    <a class="footer__link" href="/mayak.html">MAYAK-3</a>
+                    <a class="footer__link" href="/mayak.html">MAYAK-4</a>
+                </div>
+
+                <!-- 4) Компания -->
+                <div class="footer__col">
+                    <div class="footer__title">КОМПАНИЯ</div>
+                    <a class="footer__link" href="/about.html">О хаусботах</a>
+                    <a class="footer__link" href="/business.html">Бизнесу</a>
+                    <a class="footer__link" href="/">Политика конфиденциальности</a>
+                    <a class="footer__link" href="/contacts.html">Контакты</a>
+                </div>
+
+                <!-- 5) Адрес -->
+                <div class="footer__col">
+                    <div class="footer__title">АДРЕС</div>
+                    <div class="footer__addr">Яхт-клуб Маяк,<br>Кудрявцева 10Б</div>
+                    <div class="change_col_remove">
+                        <div class="footer__title footer__title--mt">ВРЕМЯ РАБОТЫ</div>
+                        <div class="footer__addr">ПН–ПТ 09–20 МСК</div>
+                    </div>
+                </div>
+
+                <div class="footer__col change_col">
+                    <div class="change_col footer__title footer__title--mt">ВРЕМЯ РАБОТЫ</div>
+                    <div class="footer__addr">ПН–ПТ 09–20 МСК</div>
+                </div>
+
+                <div class="footer__devbadge mobile--figma">
+                    <img class="footer__devlogo" src="./assets/images/logo/ontape.png" alt="ONTAPE DESIGN">
+                </div>
+            </div>
+        </footer>
+    </div><!-- #page -->
+</body>
+
+</html>
