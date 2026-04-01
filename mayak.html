@@ -16,41 +16,62 @@
 <body
     class="wp-singular page-template page-template-template-parts page-template-pages page-template-company-page-template page-template-template-partspagescompany-page-template-php page page-id-15 wp-theme-houseboat">
     <div id="page" class="site">
-         <header class="header">
-            <div class="container header__inner">
-                <a class="logo" href="/">HOUSE-BOAT.PRO</a>
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__top">
+                        <a class="logo" href="/">
+                            HOUSE-BOAT.PRO </a>
 
-                <nav class="nav" id="nav" aria-label="Основная навигация">
-                    <ul class="nav__list">
-                        <li class="nav__item">
+                        <nav aria-label="Основная навигация" class="desktop-nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a class="nav__link" href="projects.html">Проекты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="about.html">О хаусботах</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="business.html">B2B</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="contacts.html">Контакты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="news.html">Новости</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="header__right">
+                            <a href="tel:+79998500149" class="header__phone">+7 (999) 850-01-49</a>
+                            <a href="#" class="icon-btn" aria-label="WhatsApp">
+                                <img class="icon-btn__icon" src="./assets/icons/wa.svg" alt="WhatsApp">
+                            </a>
+                            <a href="#" class="icon-btn" aria-label="Telegram">
+                                <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="Telegram">
+                            </a>
+
+                            <button class="burger-btn" id="burgerBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mobile-menu" id="mobileMenu">
+                        <div class="header__right">
+                            <a href="tel:+79998500149" class="header__phone">+7 (999) 850-01-49</a>
+                        </div>
+                        <ul class="nav__list">
                             <a class="nav__link" href="projects.html">Проекты</a>
-                        </li>
-                        <li class="nav__item">
                             <a class="nav__link" href="about.html">О хаусботах</a>
-                        </li>
-                        <li class="nav__item"><a class="nav__link" href="business.html">B2B</a></li>
-                        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
-                        <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
-                    </ul>
-                </nav>
-
-                <div class="header__right">
-                    <a class="header__phone" href="tel:+79998500149">+7 (999) 850-01-49</a>
-
-                    <!-- Telegram -->
-                    <a class="icon-btn icon-btn--solid" href="#" aria-label="Telegram">
-                        <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="">
-                    </a>
-
-                    <!-- WhatsApp -->
-                    <a class="icon-btn icon-btn--outline" href="#" aria-label="WhatsApp">
-                        <img class="icon-btn__icon" src="./assets/icons/wa.svg" alt="">
-                    </a>
-                    <button class="burger" id="burgerBtn" aria-label="Меню">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+                            <a class="nav__link" href="business.html">B2B</a>
+                            <a class="nav__link" href="contacts.html">Контакты</a>
+                            <a class="nav__link" href="news.html">Новости</a>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>
@@ -88,9 +109,24 @@
                             <h3 class="plan_project-title title_plan">Планировка хаусбота</h3>
                             <p class="plan_project-subtitle">На макете представлена планировка проекта МАЯК-1</p>
                         </div>
-                        <div class="plan_project_buttons card gap_16">
-                            <a href="" class="second_btn active"><button>1 этаж</button></a>
-                            <a href="" class="second_btn"><button>2 этаж</button></a>
+                        <div class="plan_project_all__buttons flex_row">
+                            <div class="plan_project_buttons card gap_16">
+                                <button class="slider_tabs__tab active">1 этаж</button>
+                                <button class="slider_tabs__tab">2 этаж</button>
+
+                            </div>
+                            <div class="icrease_plan" id="btn">
+
+                                <svg width="45" height="45" viewBox="0 0 45 45" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="45" height="45" rx="22.5" fill="#0D1122" />
+                                    <path
+                                        d="M25.7021 29.5H27.4149C27.9679 29.5 28.4983 29.2803 28.8893 28.8893C29.2803 28.4983 29.5 27.9679 29.5 27.4149V25.7021M29.5 19.2979V17.5851C29.5 17.0321 29.2803 16.5017 28.8893 16.1107C28.4983 15.7197 27.9679 15.5 27.4149 15.5H25.7021M19.2979 29.5H17.5851C17.0321 29.5 16.5017 29.2803 16.1107 28.8893C15.7197 28.4983 15.5 27.9679 15.5 27.4149V25.7021M15.5 19.2979V17.5851C15.5 17.0321 15.7197 16.5017 16.1107 16.1107C16.5017 15.7197 17.0321 15.5 17.5851 15.5H19.2979"
+                                        stroke="#EAB789" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+
+                            </div>
                         </div>
                     </div>
                     <div class="plan_project-img">
@@ -336,7 +372,7 @@
                     <p class="subtitle">Посмотрите дом онлайн</p>
                     <h2 class="title">3D-тур</h2>
                 </div>
-                <img src="assets/images/mayak/house.svg" alt="">
+                <img class="house__online" src="assets/images/mayak/house.svg" alt="">
             </section>
 
             <section class="section text_block__v2 container top_pad40 btm_pad40 ">

@@ -15,42 +15,64 @@
 
 <body
     class="home wp-singular page-template page-template-template-parts page-template-pages page-template-main-page-template page-template-template-partspagesmain-page-template-php page page-id-10 wp-theme-houseboat">
+
     <div id="page" class="site">
         <header class="header">
-            <div class="container header__inner">
-                <a class="logo" href="/">HOUSE-BOAT.PRO</a>
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__top">
+                        <a class="logo" href="/">
+                            HOUSE-BOAT.PRO </a>
 
-                <nav class="nav" id="nav" aria-label="Основная навигация">
-                    <ul class="nav__list">
-                        <li class="nav__item">
+                        <nav aria-label="Основная навигация" class="desktop-nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a class="nav__link" href="projects.html">Проекты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="about.html">О хаусботах</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="business.html">B2B</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="contacts.html">Контакты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="news.html">Новости</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="header__right">
+                            <a href="tel:+79998500149" class="header__phone">+7 (999) 850-01-49</a>
+                            <a href="#" class="icon-btn" aria-label="WhatsApp">
+                                <img class="icon-btn__icon" src="./assets/icons/wa.svg" alt="WhatsApp">
+                            </a>
+                            <a href="#" class="icon-btn" aria-label="Telegram">
+                                <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="Telegram">
+                            </a>
+
+                            <button class="burger-btn" id="burgerBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mobile-menu" id="mobileMenu">
+                        <div class="header__right">
+                            <a href="tel:+79998500149" class="header__phone">+7 (999) 850-01-49</a>
+                        </div>
+                        <ul class="nav__list">
                             <a class="nav__link" href="projects.html">Проекты</a>
-                        </li>
-                        <li class="nav__item">
                             <a class="nav__link" href="about.html">О хаусботах</a>
-                        </li>
-                        <li class="nav__item"><a class="nav__link" href="business.html">B2B</a></li>
-                        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
-                        <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
-                    </ul>
-                </nav>
-
-                <div class="header__right">
-                    <a class="header__phone" href="tel:+79998500149">+7 (999) 850-01-49</a>
-
-                    <!-- Telegram -->
-                    <a class="icon-btn icon-btn--solid" href="#" aria-label="Telegram">
-                        <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="">
-                    </a>
-
-                    <!-- WhatsApp -->
-                    <a class="icon-btn icon-btn--outline" href="#" aria-label="WhatsApp">
-                        <img class="icon-btn__icon" src="./assets/icons/wa.svg" alt="">
-                    </a>
-                    <button class="burger" id="burgerBtn" aria-label="Меню">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+                            <a class="nav__link" href="business.html">B2B</a>
+                            <a class="nav__link" href="contacts.html">Контакты</a>
+                            <a class="nav__link" href="news.html">Новости</a>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>
@@ -330,7 +352,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="text_block__v2_title--btn-dark mobile--figma">Все проекты</a>
+                <a href="#" class="text_block__v2--btn">Все проекты</a>
             </section>
 
             <section class="section text_block__v2 container top_pad40 btm_pad40 ">
@@ -392,7 +414,7 @@
                         width: 100%;
                     }
 
-                    @media (min-width: 768px) {
+                    @media (min-width: 900px) {
                         .houseboat-slider .swiper-wrapper {
                             display: grid;
                             grid-template-columns: repeat(4, 1fr);
@@ -585,17 +607,20 @@
                         <div class="construction_info flex_column">
                             <div class="construction_info_card card">
                                 <p>За м² </p>
-                                <img src="./assets/icons/construction_line.svg" alt="">
+                                <img class="short_line" src="./assets/icons/construction_line.svg" alt="">
+                                <img class="long_line" src="./assets/icons/construction_line_long.svg" alt="">
                                 <p>от 350 тыс ₽</p>
                             </div>
                             <div class="construction_info_card card">
                                 <p>Макс. высота<span class="construction_span">*</span></p>
-                                <img src="./assets/icons/construction_line.svg" alt="">
+                                <img class="long_line" src="./assets/icons/construction_line_long.svg" alt="">
+                                <img class="short_line" src="./assets/icons/construction_line.svg" alt="">
                                 <p>2,8 м</p>
                             </div>
                             <div class="construction_info_card card">
                                 <p>Макс. длина<span class="construction_span">*</span></p>
-                                <img src="./assets/icons/construction_line.svg" alt="">
+                                <img class="long_line" src="./assets/icons/construction_line_long.svg" alt="">
+                                <img class="short_line" src="./assets/icons/construction_line.svg" alt="">
                                 <p>12,7 м</p>
                             </div>
                         </div>
@@ -608,17 +633,20 @@
                         <div class="construction_info flex_column">
                             <div class="construction_info_card card">
                                 <p>За м² </p>
-                                <img src="./assets/icons/construction_line.svg" alt="">
+                                <img class="long_line" src="./assets/icons/construction_line_long.svg" alt="">
+                                <img class="short_line" src="./assets/icons/construction_line.svg" alt="">
                                 <p>от 280 тыс ₽</p>
                             </div>
                             <div class="construction_info_card card">
                                 <p>Макс. высота </p>
-                                <img src="./assets/icons/construction_line.svg" alt="">
+                                <img class="long_line" src="./assets/icons/construction_line_long.svg" alt="">
+                                <img class="short_line" src="./assets/icons/construction_line.svg" alt="">
                                 <p>9,6 м</p>
                             </div>
                             <div class="construction_info_card card">
                                 <p>Макс. длина </p>
-                                <img src="./assets/icons/construction_line.svg" alt="">
+                                <img class="long_line" src="./assets/icons/construction_line_long.svg" alt="">
+                                <img class="short_line" src="./assets/icons/construction_line.svg" alt="">
                                 <p>20 м</p>
                             </div>
                         </div>
@@ -652,7 +680,7 @@
                                 <h4>Класс А+++</h4>
                                 <p>Энергоэффективность</p>
                             </div>
-                            <img class="abs-cover" src="./assets/images/technology/first.png"
+                            <img class="abs-cover about_info_dark_img" src="./assets/images/technology/first.png"
                                 alt="Теплые дома для жизни">
                         </div>
                         <div class="text_block__v1--card card pad_24">
@@ -701,7 +729,7 @@
                                 <h4>Класс А+</h4>
                                 <p>Энергоэффективность</p>
                             </div>
-                            <img class="abs-cover" src="./assets/images/technology/second.png"
+                            <img class="abs-cover about_info_dark_img" src="./assets/images/technology/second.png"
                                 alt="Теплые дома для жизни">
                         </div>
                     </div>

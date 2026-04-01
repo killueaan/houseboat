@@ -9,46 +9,68 @@
     <link rel="stylesheet" id="houseboat-style-css" href="./assets/css/style.css" media="all">
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="./assets/js/slider_about.js"></script>
+    <script src="./assets/js/faq.js" defer></script>
 </head>
 
 <body
     class="wp-singular page-template page-template-template-parts page-template-pages page-template-company-page-template page-template-template-partspagescompany-page-template-php page page-id-15 wp-theme-houseboat">
     <div id="page" class="site">
         <header class="header">
-            <div class="container header__inner">
-                <a class="logo" href="/">HOUSE-BOAT.PRO</a>
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__top">
+                        <a class="logo" href="/">
+                            HOUSE-BOAT.PRO </a>
 
-                <nav class="nav" id="nav" aria-label="Основная навигация">
-                    <ul class="nav__list">
-                        <li class="nav__item">
+                        <nav aria-label="Основная навигация" class="desktop-nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a class="nav__link" href="projects.html">Проекты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="about.html">О хаусботах</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="business.html">B2B</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="contacts.html">Контакты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="news.html">Новости</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="header__right">
+                            <a href="tel:+79998500149" class="header__phone">+7 (999) 850-01-49</a>
+                            <a href="#" class="icon-btn" aria-label="WhatsApp">
+                                <img class="icon-btn__icon" src="./assets/icons/wa.svg" alt="WhatsApp">
+                            </a>
+                            <a href="#" class="icon-btn" aria-label="Telegram">
+                                <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="Telegram">
+                            </a>
+
+                            <button class="burger-btn" id="burgerBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mobile-menu" id="mobileMenu">
+                        <div class="header__right">
+                            <a href="tel:+79998500149" class="header__phone">+7 (999) 850-01-49</a>
+                        </div>
+                        <ul class="nav__list">
                             <a class="nav__link" href="projects.html">Проекты</a>
-                        </li>
-                        <li class="nav__item">
                             <a class="nav__link" href="about.html">О хаусботах</a>
-                        </li>
-                        <li class="nav__item"><a class="nav__link" href="business.html">B2B</a></li>
-                        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
-                        <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
-                    </ul>
-                </nav>
-
-                <div class="header__right">
-                    <a class="header__phone" href="tel:+79998500149">+7 (999) 850-01-49</a>
-
-                    <!-- Telegram -->
-                    <a class="icon-btn icon-btn--solid" href="#" aria-label="Telegram">
-                        <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="">
-                    </a>
-
-                    <!-- WhatsApp -->
-                    <a class="icon-btn icon-btn--outline" href="#" aria-label="WhatsApp">
-                        <img class="icon-btn__icon" src="./assets/icons/wa.svg" alt="">
-                    </a>
-                    <button class="burger" id="burgerBtn" aria-label="Меню">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+                            <a class="nav__link" href="business.html">B2B</a>
+                            <a class="nav__link" href="contacts.html">Контакты</a>
+                            <a class="nav__link" href="news.html">Новости</a>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>
@@ -78,7 +100,7 @@
                     <h2 class="title">Для чего нужны хаусботы</h2>
                 </div>
                 <div class="text_block__v5--content flex_column gap_16">
-                    <img src="./assets/images/about/advantages.png" alt="Преимущества хаусботов">
+                    <img class="advantages_img" src="./assets/images/about/advantages.png" alt="Преимущества хаусботов">
 
                     <div class="swiper lifestyle-slider">
                         <div class="swiper-wrapper">
@@ -95,8 +117,9 @@
                             <div class="swiper-slide">
                                 <div class="text_block__v5--card card pad_24">
                                     <h3>Мобильный дом</h3>
-                                    <p>Главное преимущество хаусбота — возможность менять место жительства
-                                        без переезда. Надоел вид из окна?
+                                    <p>Главное преимущество хаусбота —
+                                        возможность менять место
+                                        жительства без переезда. Надоел вид из окна?
                                         Просто переместитесь в другую бухту!
                                         Хотите провести зиму в теплых краях?
                                         Ваш дом поедет вместе с вами!</p>
@@ -161,7 +184,8 @@
                             <div class="text_block__v6--card card">
                                 <img src="./assets/images/about/1.png" alt="Технологии каркаса">
                                 <div class="text_block__v6--info">
-                                    <h3>Технологии каркаса</h3>
+                                    <h3>Технологии
+                                        каркаса</h3>
                                     <p>Конструкция рассчитана на экстремальные нагрузки и прослужит более 50 лет</p>
                                 </div>
                             </div>
@@ -202,7 +226,7 @@
             </section>
 
             <div class="dark-section">
-                <section class="section text_block__v5 container top_pad40 btm_pad40">
+                <section class="section faq_dark text_block__v5 container top_pad40 btm_pad40">
                     <div class="title_content gap_10">
                         <p class="subtitle">Отвечаем на вопросы клиентов</p>
                         <h2 class="title">Часто задаваемые вопросы</h2>

@@ -13,40 +13,61 @@
     class="wp-singular page-template page-template-template-parts page-template-pages page-template-company-page-template page-template-template-partspagescompany-page-template-php page page-id-15 wp-theme-houseboat">
     <div id="page" class="site">
         <header class="header">
-            <div class="container header__inner">
-                <a class="logo" href="/">HOUSE-BOAT.PRO</a>
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__top">
+                        <a class="logo" href="/">
+                            HOUSE-BOAT.PRO </a>
 
-                <nav class="nav" id="nav" aria-label="Основная навигация">
-                    <ul class="nav__list">
-                        <li class="nav__item">
+                        <nav aria-label="Основная навигация" class="desktop-nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a class="nav__link" href="projects.html">Проекты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="about.html">О хаусботах</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="business.html">B2B</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="contacts.html">Контакты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="news.html">Новости</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="header__right">
+                            <a href="tel:+79998500149" class="header__phone">+7 (999) 850-01-49</a>
+                            <a href="#" class="icon-btn" aria-label="WhatsApp">
+                                <img class="icon-btn__icon" src="./assets/icons/wa.svg" alt="WhatsApp">
+                            </a>
+                            <a href="#" class="icon-btn" aria-label="Telegram">
+                                <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="Telegram">
+                            </a>
+
+                            <button class="burger-btn" id="burgerBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mobile-menu" id="mobileMenu">
+                        <div class="header__right">
+                            <a href="tel:+79998500149" class="header__phone">+7 (999) 850-01-49</a>
+                        </div>
+                        <ul class="nav__list">
                             <a class="nav__link" href="projects.html">Проекты</a>
-                        </li>
-                        <li class="nav__item">
                             <a class="nav__link" href="about.html">О хаусботах</a>
-                        </li>
-                        <li class="nav__item"><a class="nav__link" href="business.html">B2B</a></li>
-                        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
-                        <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
-                    </ul>
-                </nav>
-
-                <div class="header__right">
-                    <a class="header__phone" href="tel:+79998500149">+7 (999) 850-01-49</a>
-
-                    <!-- Telegram -->
-                    <a class="icon-btn icon-btn--solid" href="#" aria-label="Telegram">
-                        <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="">
-                    </a>
-
-                    <!-- WhatsApp -->
-                    <a class="icon-btn icon-btn--outline" href="#" aria-label="WhatsApp">
-                        <img class="icon-btn__icon" src="./assets/icons/wa.svg" alt="">
-                    </a>
-                    <button class="burger" id="burgerBtn" aria-label="Меню">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+                            <a class="nav__link" href="business.html">B2B</a>
+                            <a class="nav__link" href="contacts.html">Контакты</a>
+                            <a class="nav__link" href="news.html">Новости</a>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>

@@ -19,6 +19,7 @@ const swiper = new Swiper('.property-cards-slider', {
 document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.documents-slider', {
         slidesPerView: 1.1,
+        spaceBetween:8,
         autoHeight: true,
     });
 
@@ -41,7 +42,7 @@ function initSlider() {
     const sliderEl = document.querySelector('.houseboat-slider');
     if (!sliderEl) return;
 
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 900) {
         if (!houseboatSlider) {
             houseboatSlider = new Swiper(sliderEl, {
                 slidesPerView: 1.2,
@@ -61,3 +62,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initSlider();
     window.addEventListener('resize', initSlider);
 });
+
+
