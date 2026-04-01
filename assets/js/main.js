@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.documents-slider', {
         slidesPerView: 1.1,
         spaceBetween:8,
-        autoHeight: true,
     });
 
     function toggleSlider() {
