@@ -43,7 +43,7 @@
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
-	src: url('../fonts/Geist/static/Geist-ExtraBold.ttf');
+	src: url('../fonts/Geist/static/Geist-Black.ttf');
 }
 
 * {
@@ -55,9 +55,6 @@
 *::before,
 *::after {
 	box-sizing: border-box;
-	font-smoothing: antialiased;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
 button {
@@ -675,7 +672,7 @@ body {
 
 .banner__title {
 	color: #FFFFFF;
-	font-weight: 700;
+	font-weight: 600;
 	font-size: 80px;
 	line-height: 100%;
 	text-transform: uppercase;
