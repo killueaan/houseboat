@@ -4,48 +4,45 @@ document.addEventListener('DOMContentLoaded', function () {
     const rightContainer = document.querySelector('.questions_block__right');
     
     let activeIndex = null;
-    let isContentVisible = true;
+    let isMobileMode = window.innerWidth <= 800;
 
     function isMobile() {
-        return window.innerWidth <= 600;
+        return window.innerWidth <= 800;
     }
 
     function closeAll() {
         tabs.forEach(t => t.classList.remove('active'));
         contents.forEach(c => c.classList.remove('active'));
+        activeIndex = null;
         
         if (!isMobile()) {
-            contents.forEach(c => {
-                if (c.parentElement !== rightContainer) {
-                    rightContainer.appendChild(c);
+            contents.forEach(content => {
+                if (content.parentElement !== rightContainer) {
+                    rightContainer.appendChild(content);
                 }
             });
         }
-        
-        activeIndex = null;
-        isContentVisible = false;
     }
 
     function activateTab(tab, content, index) {
-        // Если кликнули на тот же таб и контент открыт - закрываем
-        if (activeIndex === index && isContentVisible) {
+        // На мобилке: если кликнули на тот же таб - закрываем
+        if (isMobile() && activeIndex === index) {
             closeAll();
             return;
         }
         
-        // Если кликнули на другой таб или контент закрыт - открываем
+        // Открываем новый таб
         tabs.forEach(t => t.classList.remove('active'));
         contents.forEach(c => c.classList.remove('active'));
 
         tab.classList.add('active');
         content.classList.add('active');
-        
+
         if (isMobile()) {
             tab.after(content);
         }
         
         activeIndex = index;
-        isContentVisible = true;
     }
 
     // Инициализация
@@ -54,12 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const index = tabs.indexOf(activeTab);
         if (index >= 0 && contents[index]) {
             activeIndex = index;
-            isContentVisible = true;
             activateTab(activeTab, contents[index], index);
         }
     }
 
-    // Обработка кликов
+    // Клики по табам
     tabs.forEach((tab, index) => {
         tab.addEventListener('click', function () {
             activateTab(tab, contents[index], index);
@@ -68,8 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Обработка изменения размера окна
     window.addEventListener('resize', function () {
-        if (!isMobile()) {
-            // На десктопе все контенты в правом контейнере
+        const mobileNow = isMobile();
+        
+        if (!mobileNow) {
+            // Десктопный режим: все контенты в правом контейнере
             contents.forEach(content => {
                 if (content.parentElement !== rightContainer) {
                     rightContainer.appendChild(content);
@@ -77,25 +75,19 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             
             // Восстанавливаем активный контент
-            if (activeIndex !== null && isContentVisible) {
+            if (activeIndex !== null) {
                 tabs[activeIndex].classList.add('active');
                 contents[activeIndex].classList.add('active');
-            } else {
-                tabs.forEach(t => t.classList.remove('active'));
-                contents.forEach(c => c.classList.remove('active'));
             }
         } else {
-            // На мобильном: активный контент после таба
-            if (activeIndex !== null && isContentVisible) {
-                const tab = tabs[activeIndex];
-                const content = contents[activeIndex];
-                tab.after(content);
-                tab.classList.add('active');
-                content.classList.add('active');
-            } else {
-                tabs.forEach(t => t.classList.remove('active'));
-                contents.forEach(c => c.classList.remove('active'));
+            // Мобильный режим: активный контент после таба
+            if (activeIndex !== null && tabs[activeIndex].classList.contains('active')) {
+                tabs[activeIndex].after(contents[activeIndex]);
+                tabs[activeIndex].classList.add('active');
+                contents[activeIndex].classList.add('active');
             }
         }
+        
+        isMobileMode = mobileNow;
     });
 });

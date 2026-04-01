@@ -714,9 +714,14 @@ body {
 	font-size: 24px;
 	line-height: 120%;
 	background: var(--accent);
+	color: var(--text);
 	border-radius: 24px;
 	padding: 16px 32px;
 	width: 390px;
+}
+
+.banner__right button:hover {
+	background: var(--accent-dark);
 }
 
 .banner_content__pages {
@@ -885,7 +890,7 @@ body {
 	line-height: 120%;
 }
 
-@media(max-width:400px) {
+@media(max-width:500px) {
 	.advantages-card.pad_20 {
 		max-height: 177px;
 		padding: 20px 14px 16px 16px;
@@ -1438,7 +1443,7 @@ span.hover_span {
 	}
 
 	.text_block__v2--btn {
-		display: flex;
+		display: block;
 		padding: 12px 22px;
 		font-size: 18px;
 	}
@@ -1490,6 +1495,7 @@ span.hover_span {
 .about_section--btn {
 	padding: 13px 45px;
 	background: #DAAD79;
+	color: var(--text);
 	border-radius: 16px;
 	font-weight: 400;
 	font-size: 18px;
@@ -2559,7 +2565,7 @@ p.questions_text {
 	display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 	.faq_dark {
 		padding-top: 48px;
 	}
@@ -3589,6 +3595,7 @@ input[type="checkbox"]:checked {
 	font-size: 18px;
 	line-height: 120%;
 	background: #DAAD79;
+	color: var(--text);
 	border-radius: 16px;
 	padding: 13px 84px;
 }
@@ -3696,6 +3703,7 @@ input[type="checkbox"]:checked {
 .plan_project_buttons .slider_tabs__tab {
 	padding: 6px 16px;
 	background: transparent;
+	color: var(--text);
 	border: none;
 	border-radius: 12px;
 	font-size: 16px;
@@ -3832,6 +3840,7 @@ input[type="checkbox"]:checked {
 
 .price button {
 	background: #DAAD79;
+	color: var(--text);
 	padding: 13px 50px;
 	font-weight: 400;
 	font-size: 18px;
