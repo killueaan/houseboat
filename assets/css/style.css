@@ -1415,9 +1415,7 @@ span.hover_span {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		height: auto;
 		flex-shrink: 0;
-		margin-bottom: 8px;
 	}
 
 	.card_project__details {
