@@ -3939,7 +3939,7 @@ input[type="checkbox"]:checked {
 	}
 
 	.plan_project-title.title_plan {
-		display: none;
+		font-size: 24px;
 	}
 
 	.plan_project-subtitle {
