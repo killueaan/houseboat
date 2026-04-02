@@ -67,20 +67,38 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-const fullscreenBtn = document.querySelector('.icrease_plan');
-const sliderWrapper = document.querySelector('.plan_project-img');
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('imgFull');
+const mainImg = document.getElementById('img');
+const zoomBtns = document.querySelectorAll('#zoomBtn1, #zoomBtn2');
 
-if (fullscreenBtn && sliderWrapper) {
-    fullscreenBtn.addEventListener('click', () => {
-        if (!document.fullscreenElement) {
-            sliderWrapper.requestFullscreen().catch(err => {
-                console.log(`Ошибка полноэкранного режима: ${err.message}`);
-            });
-        } else {
-            document.exitFullscreen();
-        }
-    });
+function openModal() {
+    modal.classList.add('active');
+    modalImg.src = mainImg.src;
+    document.body.style.overflow = 'hidden';
 }
+
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+zoomBtns.forEach(btn => {
+    btn.addEventListener('click', openModal);
+});
+
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+    }
+});
 
 const tabs = document.querySelectorAll('.slider_tabs__tab');
 tabs.forEach(tab => {
