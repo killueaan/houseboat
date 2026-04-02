@@ -1527,6 +1527,7 @@ span.hover_span {
 	line-height: 1.2;
 	letter-spacing: 3%;
 	display: block;
+	text-align: center;
 }
 
 .about_section--btn:hover {
@@ -1748,10 +1749,8 @@ span.hover_span {
 	}
 
 	.about_section--btn {
-		width: 100%;
-		display: block;
-		padding: 13px 37px;
 		font-size: 18px;
+		padding: 13px 30px;
 	}
 
 	.about_card--info p {
