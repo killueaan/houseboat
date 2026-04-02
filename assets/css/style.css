@@ -1240,33 +1240,34 @@ span.project_price {
 }
 
 .card_project__hover {
+	position: relative;
 	justify-content: space-between;
 	transition: opacity 0.5s ease;
 	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.4s ease;
+	pointer-events: none;
 	width: 100%;
 	height: 47px;
 	overflow: hidden;
 	display: flex;
-	align-items: center;
 }
 
 .card_project--btn {
 	background-color: var(--accent);
 	border-radius: 16px;
 	padding: 13px 56px;
-	line-height: 1.2;
+	line-height: 1;
 	font-weight: 400;
 	font-size: 18px;
 	transition: all 0.4s ease;
 	white-space: nowrap;
 	text-decoration: none;
-	display: inline-block;
 	flex-shrink: 0;
 }
 
 .card_project--btn:hover {
 	background-color: var(--accent-dark);
-	transition: all 0.4s ease;
 }
 
 .card_project:hover .card_project__image_wrapper {
@@ -1275,12 +1276,13 @@ span.project_price {
 
 .card_project:hover .card_project__hover {
 	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
 }
 
 .card_project__hover_list {
 	gap: 24px;
-	align-items: center;
-	grid-template-columns: 89px 56px 56px 57px;
+	grid-template-columns: repeat(4, auto);
 	flex-shrink: 0;
 }
 
@@ -1291,7 +1293,7 @@ span.project_price {
 .card_project__hover_item p {
 	font-size: 12px;
 	opacity: 0.6;
-	line-height: 1.4;
+	line-height: 100%;
 	font-weight: 300;
 	white-space: nowrap;
 	margin: 0;
@@ -1319,11 +1321,15 @@ span.hover_span {
 	transition: all 0.4s ease;
 	text-align: center;
 	display: none;
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
 
 .text_block__v2--btn:hover {
 	background-color: var(--accent-dark);
 }
+
 
 @media(max-width:1000px) {
 	.card_project--btn {
@@ -1449,7 +1455,6 @@ span.hover_span {
 
 	.card_project__hover_list {
 		gap: 10px;
-		align-items: center;
 		grid-template-columns: 60px 38px 37px 39px;
 		flex-shrink: 0;
 	}
