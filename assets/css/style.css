@@ -1155,7 +1155,10 @@ body {
 .card_project__image_wrapper img {
 	border-radius: 24px;
 	width: 100%;
-	height: 100%;
+	position: absolute;
+	z-index: 0;
+	top: 50%;
+	transform: translateY(-50%);
 	object-fit: cover;
 	transition: transform 0.4s ease;
 }
@@ -1177,6 +1180,7 @@ body {
 	left: 12px;
 	display: flex;
 	gap: 6px;
+	z-index: 1;
 }
 
 .card_project__tag {
@@ -1660,6 +1664,12 @@ span.hover_span {
 	font-weight: 500;
 }
 
+@media(max-width:1200px) {
+	.about_section--text .about_info__card:nth-child(3) {
+		display: none;
+	}
+}
+
 @media(max-width:900px) {
 	.about_info__card span {
 		font-size: 12px;
@@ -1682,10 +1692,6 @@ span.hover_span {
 		order: -1;
 	}
 
-	.about_section--text .about_info__card:nth-child(3) {
-		display: none;
-	}
-
 	.business.about_card--info h3 {
 		font-size: 24px;
 	}
@@ -1696,6 +1702,7 @@ span.hover_span {
 
 	.about_info {
 		left: 8px;
+		right: 8px;
 		bottom: 8px;
 		gap: 8px;
 	}
@@ -1709,6 +1716,10 @@ span.hover_span {
 
 	.about_info__card {
 		width: 100% !important;
+	}
+
+	.about_info__card.low_width p {
+		min-width: 136px;
 	}
 
 	.business .about_info__card {
@@ -1739,7 +1750,7 @@ span.hover_span {
 	.about_section--btn {
 		width: 100%;
 		display: block;
-		padding: 13px 20px;
+		padding: 13px 37px;
 		font-size: 18px;
 	}
 
@@ -1784,7 +1795,16 @@ span.hover_span {
 	font-weight: 300;
 }
 
-@media(max-width:600px) {
+@media(max-width:500px) {
+
+	.about .text_block__v2--card h3,
+	.mayak .text_block__v2--card h3 {
+		font-size: 18px;
+		max-width: 60%;
+	}
+}
+
+@media(max-width:700px) {
 	.about.text_block__v2--content.grid-3 {
 		grid-template-columns: 1fr;
 		grid-template-rows: 270px auto 270px auto;
@@ -1836,6 +1856,10 @@ span.hover_span {
 
 	.mayak .text_block__v2--card:nth-child(6) {
 		order: 5;
+	}
+
+	.text_width br {
+		display: none;
 	}
 
 	.about .text_block__v2--card h3,
@@ -3256,11 +3280,6 @@ input[type="checkbox"]:checked {
 	letter-spacing: 2%;
 }
 
-.form_margin {
-	margin-top: 40px;
-	margin-bottom: 80px;
-}
-
 @media(max-width:1200px) {
 	.form_section__fields {
 		grid-template-columns: 1fr;
@@ -3318,6 +3337,10 @@ input[type="checkbox"]:checked {
 	.excursion.text_block__v7--content {
 		gap: 139px;
 		padding: 24px 19px 32px 16px;
+	}
+
+	.cooperation {
+		max-width: 85% !important;
 	}
 }
 
