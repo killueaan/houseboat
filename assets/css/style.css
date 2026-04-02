@@ -1264,6 +1264,9 @@ span.project_price {
 	white-space: nowrap;
 	text-decoration: none;
 	flex-shrink: 0;
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
 
 .card_project--btn:hover {
@@ -1321,9 +1324,6 @@ span.hover_span {
 	transition: all 0.4s ease;
 	text-align: center;
 	display: none;
-	position: absolute;
-	right: 0;
-	bottom: 0;
 }
 
 .text_block__v2--btn:hover {
