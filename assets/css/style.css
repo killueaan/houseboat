@@ -437,6 +437,10 @@ body {
 	color: white;
 }
 
+.logo:hover {
+	color: var(--accent);
+}
+
 .desktop-nav .nav__list {
 	display: flex;
 	align-items: center;
@@ -458,7 +462,7 @@ body {
 }
 
 .nav__link:hover {
-	color: var(--dark-2);
+	color: var(--accent);
 }
 
 .header__right {
@@ -479,7 +483,7 @@ body {
 }
 
 .header__phone:hover {
-	color: var(--dark-2);
+	color: var(--accent);
 }
 
 .icon-btn {
@@ -489,10 +493,14 @@ body {
 	cursor: pointer;
 }
 
-.icon-btn__icon {
+.icon-btn svg {
 	width: 26px;
 	height: 26px;
 	display: block;
+}
+
+.icon-btn:hover .icon-bg {
+	fill: var(--accent);
 }
 
 .burger-btn {
@@ -519,7 +527,7 @@ body {
 }
 
 .burger-btn:hover span {
-	background: var(--dark-2);
+	background: var(--accent);
 }
 
 .burger-btn.active span:first-child {
@@ -569,7 +577,7 @@ body {
 		font-size: 13px;
 	}
 
-	.icon-btn__icon {
+	.icon-btn svg {
 		width: 20px;
 		height: 20px;
 	}
@@ -2606,8 +2614,11 @@ p.questions_text {
 	margin-top: auto;
 }
 
-.questions_block__right--bottom svg {
-	cursor: pointer;
+.click:hover .icon-bg {
+	stroke: var(--accent);
+}
+.click:hover .icon-main {
+	fill: var(--accent);
 }
 
 .questions_block__right--bottom p {
@@ -2878,7 +2889,7 @@ p.questions_text {
 	margin: 0;
 	white-space: nowrap;
 	font-size: var(--fs-footer-logo);
-	font-weight: 700;
+	font-weight: 600;
 	color: var(--accent);
 }
 
@@ -2913,12 +2924,19 @@ p.questions_text {
 	text-decoration: none;
 }
 
+.footer.footer--figma .footer__contact:hover {
+	color: var(--accent);
+}
+
 /* icons (make sure SVGs are visible on dark bg) */
-.footer.footer--figma .footer__icon {
+.footer__contact svg {
 	width: 16px;
 	height: 16px;
 	display: block;
-	filter: brightness(0) invert(1);
+}
+
+.footer.footer--figma .footer__contact:hover .icon-bg {
+	fill: var(--accent);
 }
 
 /* dev badge */
@@ -2979,7 +2997,7 @@ p.questions_text {
 /* hover */
 .footer.footer--figma .footer__link:hover,
 .footer.footer--figma .footer__contact:hover {
-	color: rgba(255, 255, 255, 1);
+	color: var(--accent);
 }
 
 .footer__col.change_col {
@@ -3237,8 +3255,16 @@ p.questions_text {
 	background: var(--accent);
 }
 
+.view_btn:hover {
+	background: var(--accent-dark);
+}
+
 .test_btn {
 	background: var(--bg);
+}
+
+.test_btn:hover {
+	background: #f8f8f8;
 }
 
 input[type="checkbox"] {
@@ -3267,7 +3293,7 @@ input[type="checkbox"]:checked {
 	font-size: 12px;
 	line-height: 1.2;
 	color: var(--bg);
-	font-weight: 200;
+	font-weight: 300;
 }
 
 .form_section__policy {
@@ -3652,6 +3678,10 @@ input[type="checkbox"]:checked {
 	padding: 13px 84px;
 }
 
+.contacts__button button:hover {
+	background: #ba9263;
+}
+
 .contacts__right {
 	grid-column: span 2;
 	width: 100%;
@@ -3913,13 +3943,17 @@ input[type="checkbox"]:checked {
 	padding-bottom: 16px;
 }
 
-.price button {
+.price_button button {
 	background: #DAAD79;
 	color: var(--text);
 	padding: 13px 50px;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 120%;
+}
+
+.price_button button:hover {
+	background: var(--accent-dark);
 }
 
 .info_blocks {
@@ -4181,6 +4215,10 @@ input[type="checkbox"]:checked {
 	background: var(--accent);
 }
 
+.offer_btns .next_btn:hover {
+	background: var(--accent-dark);
+}
+
 .offer_btn {
 	display: flex;
 	gap: 10px;
@@ -4429,7 +4467,7 @@ input[type="checkbox"]:checked {
 }
 
 .bus_card {
-	padding: 24px 24px 0 24px;
+	padding: 24px 24px 0 40px;
 	height: fit-content;
 }
 
@@ -4497,6 +4535,12 @@ input[type="checkbox"]:checked {
 	font-weight: 300;
 	font-size: 24px;
 	line-height: 100%;
+}
+
+.href_project:hover p,
+.href_project:hover svg path {
+	color: var(--accent-dark);
+	stroke: var(--accent-dark);
 }
 
 .business_project .text_block__v2--content {
