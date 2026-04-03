@@ -449,12 +449,16 @@ body {
 .nav__link {
 	font-size: 16px;
 	color: #fff;
-	transition: color 150ms ease;
+	transition: color 200ms ease;
 	text-transform: uppercase;
 	line-height: 100%;
 	letter-spacing: 4%;
 	font-weight: 300;
 	text-decoration: none;
+}
+
+.nav__link:hover {
+	color: var(--dark-2);
 }
 
 .header__right {
@@ -471,6 +475,11 @@ body {
 	letter-spacing: 0.04em;
 	line-height: 100%;
 	text-decoration: none;
+	transition: color 200ms ease;
+}
+
+.header__phone:hover {
+	color: var(--dark-2);
 }
 
 .icon-btn {
@@ -507,6 +516,10 @@ body {
 	border-radius: 2px;
 	transition: all 0.3s ease;
 	position: relative;
+}
+
+.burger-btn:hover span {
+	background: var(--dark-2);
 }
 
 .burger-btn.active span:first-child {
@@ -1115,7 +1128,6 @@ body {
 }
 
 /* text_block__v2 catalog index projects */
-
 .cards_project {
 	gap: 32px 16px;
 	width: 100%;
@@ -1128,6 +1140,8 @@ body {
 	height: 405px;
 }
 
+/* ================== CONTENT ================== */
+
 .card_project__content {
 	padding-left: 4px;
 	height: 38px;
@@ -1137,8 +1151,10 @@ body {
 }
 
 .card_project:hover .card_project__content {
-	height: 112px;
+	height: 120px;
 }
+
+/* ================== IMAGE ================== */
 
 .card_project__image_wrapper {
 	position: relative;
@@ -1157,21 +1173,23 @@ body {
 	width: 100%;
 	height: 350px;
 	position: absolute;
-	z-index: 0;
 	top: 50%;
 	transform: translateY(-50%);
 	transition: transform 0.4s ease;
+	object-fit: cover;
 }
+
+.card_project:hover .card_project__image_wrapper {
+	height: 288px;
+}
+
+/* ================== TAGS ================== */
 
 .hit {
 	background-color: var(--accent);
 	border-radius: 16px;
 	padding: 6px 16px;
-	line-height: 1.4;
-	font-weight: 400;
 	font-size: 14px;
-	backdrop-filter: blur(4);
-	-webkit-backdrop-filter: blur(4px);
 }
 
 .card_project__tags {
@@ -1185,25 +1203,22 @@ body {
 
 .card_project__tag {
 	background: var(--white);
-	backdrop-filter: blur(4px);
-	-webkit-backdrop-filter: blur(4px);
 	border-radius: 16px;
 	padding: 6px 16px;
 	font-size: 14px;
-	line-height: 1.4;
-	font-weight: 400;
 }
+
+/* ================== INFO ================== */
 
 .card_project__info {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: auto;
-	flex-shrink: 0;
-	margin-bottom: 15px;
+	margin-bottom: 12px;
 }
 
 .card_project__details {
+	display: flex;
 	align-items: center;
 	gap: 16px;
 }
@@ -1239,39 +1254,18 @@ span.project_price {
 	font-weight: 500;
 }
 
+/* ================== HOVER BLOCK ================== */
+
 .card_project__hover {
-	position: relative;
+	display: flex;
+	align-items: center;
 	justify-content: space-between;
-	transition: opacity 0.5s ease;
+	gap: 16px;
+
 	opacity: 0;
 	transform: translateY(20px);
 	transition: all 0.4s ease;
 	pointer-events: none;
-	width: 100%;
-	height: 48px;
-	overflow: hidden;
-	display: flex;
-}
-
-.card_project--btn {
-	background-color: var(--accent);
-	border-radius: 16px;
-	padding: 13px 56px;
-	line-height: 1;
-	font-weight: 400;
-	font-size: 18px;
-	transition: all 0.4s ease;
-	white-space: nowrap;
-	text-decoration: none;
-	flex-shrink: 0;
-}
-
-.card_project--btn:hover {
-	background-color: var(--accent-dark);
-}
-
-.card_project:hover .card_project__image_wrapper {
-	height: 288px;
 }
 
 .card_project:hover .card_project__hover {
@@ -1280,15 +1274,18 @@ span.project_price {
 	pointer-events: auto;
 }
 
+/* ================== GRID FIX ================== */
+
 .card_project__hover_list {
-	gap: 24px;
-	grid-template-columns: repeat(4, auto);
-	flex-shrink: 0;
-	align-items: start;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+	width: 100%;
 }
 
 .card_project__hover_item {
-	gap: 6px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
 }
 
 .card_project__hover_item p {
@@ -1308,8 +1305,18 @@ span.project_price {
 	margin: 0;
 }
 
-span.hover_span {
-	font-weight: 400;
+.card_project--btn {
+	background-color: var(--accent);
+	border-radius: 16px;
+	padding: 12px 32px;
+	font-size: 16px;
+	text-decoration: none;
+	flex-shrink: 0;
+	transition: 0.3s;
+}
+
+.card_project--btn:hover {
+	background-color: var(--accent-dark);
 }
 
 .text_block__v2--btn {
@@ -1436,7 +1443,13 @@ span.hover_span {
 	}
 
 	.card_project__hover {
-		height: 42px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 8px;
+
+		white-space: nowrap;
+		/* ключевая строка */
 	}
 
 	.card_project--btn {
@@ -1450,13 +1463,14 @@ span.hover_span {
 	}
 
 	.card_project__hover_list {
-		gap: 10px;
-		grid-template-columns: 60px 38px 37px 39px;
-		flex-shrink: 0;
+		display: flex;
+		/* вместо grid */
+		gap: 8px;
+		width: auto;
 	}
 
 	.card_project__hover_item {
-		gap: 4px;
+		flex: 0 0 auto;
 	}
 
 	.card_project__hover_item p {
@@ -1467,10 +1481,10 @@ span.hover_span {
 		font-size: 16px;
 	}
 
-	.text_block__v2--btn {
-		display: block;
-		padding: 12px 22px;
-		font-size: 18px;
+	.card_project--btn {
+		padding: 8px 16px;
+		font-size: 12px;
+		flex-shrink: 0;
 	}
 }
 
@@ -3640,16 +3654,21 @@ input[type="checkbox"]:checked {
 
 .contacts__right {
 	grid-column: span 2;
-	max-width: 100%;
-	overflow: hidden;
-	border-radius: 16px;
+	width: 100%;
 }
 
-.contacts__right img {
+.map_wrapper {
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	background-size: cover;
+	height: 258px;
+	overflow: hidden;
+	border-radius: 24px;
+}
+
+.map_wrapper iframe {
+	width: 100% !important;
+	height: 100% !important;
+	border: none;
+	display: block;
 }
 
 @media(max-width:1000px) {
