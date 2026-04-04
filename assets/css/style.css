@@ -499,8 +499,13 @@ body {
 	display: block;
 }
 
+.icon-bg {
+	transition: all 0.4s ease;
+}
+
 .icon-btn:hover .icon-bg {
 	fill: var(--accent);
+	transition: all 0.4s ease;
 }
 
 .burger-btn {
@@ -524,10 +529,12 @@ body {
 	border-radius: 2px;
 	transition: all 0.3s ease;
 	position: relative;
+	transition: all 0.4s ease;
 }
 
 .burger-btn:hover span {
 	background: var(--accent);
+	transition: all 0.4s ease;
 }
 
 .burger-btn.active span:first-child {
@@ -547,6 +554,10 @@ body {
 }
 
 @media (max-width: 1000px) {
+	.header {
+		padding-top: 16px;
+	}
+
 	.logo {
 		font-size: 18px;
 	}
@@ -569,7 +580,7 @@ body {
 
 	.header__inner {
 		background: #131B1FB2;
-		padding: 16px 18px;
+		padding: 18px;
 		margin: 0 8px;
 	}
 
@@ -604,7 +615,7 @@ body {
 		align-items: center;
 		gap: 16px;
 		list-style: none;
-		padding: 24px 0 32px 0;
+		padding: 24px 0 16px 0;
 		margin: 0;
 	}
 
@@ -736,10 +747,12 @@ body {
 	border-radius: 24px;
 	padding: 16px 32px;
 	width: 390px;
+	transition: all 0.4s ease;
 }
 
 .banner__right button:hover {
 	background: var(--accent-dark);
+	transition: all 0.4s ease;
 }
 
 .banner_content__pages {
@@ -782,10 +795,12 @@ body {
 	color: var(--bg);
 	text-decoration: none;
 	transition: color 0.2s ease;
+	transition: all 0.4s ease;
 }
 
 .breadcrumbs__link:hover {
 	color: rgba(255, 255, 255, 0.8);
+	transition: all 0.4s ease;
 }
 
 @media(max-width:1000px) {
@@ -801,6 +816,10 @@ body {
 		font-size: 24px;
 		right: 10px;
 		bottom: -10px;
+	}
+
+	.policy_breadcrumbs_title {
+		font-size: 36px;
 	}
 
 	.banner__right {
@@ -832,6 +851,14 @@ body {
 @media(max-width:500px) {
 	.banner__title {
 		font-size: 40px;
+	}
+
+	.policy_breadcrumbs_title {
+		font-size: 24px;
+	}
+
+	.policy_breadcrumbs_item {
+		font-size: 12px;
 	}
 
 	.banner__subtitle {
@@ -1034,12 +1061,12 @@ body {
 	line-height: 1.2;
 	margin-top: 25px;
 	height: 48px;
-	transition: 0.5s ease;
+	transition: all 0.4s ease;
 }
 
 .text_block__v1--btn:hover {
 	background-color: var(--accent-dark);
-	transition: 0.5s ease;
+	transition: all 0.4s ease;
 }
 
 @media(max-width:1150px) {
@@ -1148,7 +1175,6 @@ body {
 	height: 405px;
 }
 
-/* ================== CONTENT ================== */
 
 .card_project__content {
 	padding-left: 4px;
@@ -1162,7 +1188,6 @@ body {
 	height: 120px;
 }
 
-/* ================== IMAGE ================== */
 
 .card_project__image_wrapper {
 	position: relative;
@@ -1191,7 +1216,6 @@ body {
 	height: 288px;
 }
 
-/* ================== TAGS ================== */
 
 .hit {
 	background-color: var(--accent);
@@ -1216,7 +1240,6 @@ body {
 	font-size: 14px;
 }
 
-/* ================== INFO ================== */
 
 .card_project__info {
 	display: flex;
@@ -1262,8 +1285,6 @@ span.project_price {
 	font-weight: 500;
 }
 
-/* ================== HOVER BLOCK ================== */
-
 .card_project__hover {
 	display: flex;
 	align-items: center;
@@ -1281,8 +1302,6 @@ span.project_price {
 	transform: translateY(0);
 	pointer-events: auto;
 }
-
-/* ================== GRID FIX ================== */
 
 .card_project__hover_list {
 	grid-template-columns: repeat(4, 1fr);
@@ -1320,11 +1339,12 @@ span.project_price {
 	font-size: 16px;
 	text-decoration: none;
 	flex-shrink: 0;
-	transition: 0.3s;
+	transition: all 0.4s ease;
 }
 
 .card_project--btn:hover {
 	background-color: var(--accent-dark);
+	transition: all 0.4s ease;
 }
 
 .text_block__v2--btn {
@@ -1341,6 +1361,7 @@ span.project_price {
 
 .text_block__v2--btn:hover {
 	background-color: var(--accent-dark);
+	transition: all 0.4s ease;
 }
 
 
@@ -1431,6 +1452,8 @@ span.project_price {
 		justify-content: space-between;
 		align-items: center;
 		flex-shrink: 0;
+		margin-bottom: 24px;
+		margin-top: 10px;
 	}
 
 	.card_project__details {
@@ -1541,7 +1564,7 @@ span.project_price {
 
 .about_section--btn {
 	padding: 13px 45px;
-	background: #DAAD79;
+	background: var(--accent);
 	color: var(--text);
 	border-radius: 16px;
 	font-weight: 400;
@@ -1550,10 +1573,12 @@ span.project_price {
 	letter-spacing: 3%;
 	display: block;
 	text-align: center;
+	transition: all 0.4s ease;
 }
 
 .about_section--btn:hover {
 	background: var(--accent-dark);
+	transition: all 0.4s ease;
 }
 
 .about_info {
@@ -2616,9 +2641,12 @@ p.questions_text {
 
 .click:hover .icon-bg {
 	stroke: var(--accent);
+	transition: all 0.4s ease;
 }
+
 .click:hover .icon-main {
 	fill: var(--accent);
+	transition: all 0.4s ease;
 }
 
 .questions_block__right--bottom p {
@@ -2922,10 +2950,12 @@ p.questions_text {
 	font-size: var(--fs-footer-contact);
 	color: #FFFFFF;
 	text-decoration: none;
+	transition: all 0.4s ease;
 }
 
 .footer.footer--figma .footer__contact:hover {
 	color: var(--accent);
+	transition: all 0.4s ease;
 }
 
 /* icons (make sure SVGs are visible on dark bg) */
@@ -2937,6 +2967,7 @@ p.questions_text {
 
 .footer.footer--figma .footer__contact:hover .icon-bg {
 	fill: var(--accent);
+	transition: all 0.4s ease;
 }
 
 /* dev badge */
@@ -2992,12 +3023,14 @@ p.questions_text {
 	color: rgba(255, 255, 255, 1);
 	margin: 0 0 10px;
 	text-decoration: none;
+	transition: all 0.4s ease;
 }
 
 /* hover */
 .footer.footer--figma .footer__link:hover,
 .footer.footer--figma .footer__contact:hover {
 	color: var(--accent);
+	transition: all 0.4s ease;
 }
 
 .footer__col.change_col {
@@ -3253,18 +3286,22 @@ p.questions_text {
 
 .view_btn {
 	background: var(--accent);
+	transition: all 0.4s ease;
 }
 
 .view_btn:hover {
 	background: var(--accent-dark);
+	transition: all 0.4s ease;
 }
 
 .test_btn {
 	background: var(--bg);
+	transition: all 0.4s ease;
 }
 
 .test_btn:hover {
 	background: #f8f8f8;
+	transition: all 0.4s ease;
 }
 
 input[type="checkbox"] {
@@ -3431,6 +3468,7 @@ input[type="checkbox"]:checked {
 	font-weight: 400;
 	cursor: pointer;
 	line-height: 1.3;
+	transition: all 0.4s ease;
 }
 
 .slider_tabs__tab {
@@ -3441,6 +3479,7 @@ input[type="checkbox"]:checked {
 	font-size: 16px;
 	font-weight: 400;
 	white-space: nowrap;
+	transition: all 0.4s ease;
 }
 
 .swiper-button-prev,
@@ -3530,11 +3569,13 @@ input[type="checkbox"]:checked {
 	border: none;
 	cursor: pointer;
 	z-index: 10;
+	transition: all 0.4s ease;
 }
 
 .gallery-fullscreen:hover {
 	background: #fff;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transition: all 0.4s ease;
 }
 
 @media(max-width:600px) {
@@ -3609,10 +3650,23 @@ input[type="checkbox"]:checked {
 
 .blue_btn {
 	background: #C3E2FF;
+	transition: all 0.4s ease;
+}
+
+.blue_btn:hover {
+	background: #c9e4fe;
+	transition: all 0.4s ease;
 }
 
 .black_btn {
 	background: var(--text);
+	transition: all 0.4s ease;
+	color: white;
+}
+
+.black_btn:hover {
+	background: #1a203a;
+	transition: all 0.4s ease;
 	color: white;
 }
 
@@ -3632,6 +3686,12 @@ input[type="checkbox"]:checked {
 	font-size: 20px;
 	line-height: 130%;
 	letter-spacing: 2%;
+	transition: all 0.4s ease;
+}
+
+.contacts__info-value a:hover {
+	color: var(--accent-dark);
+	transition: all 0.4s ease;
 }
 
 .contacts__bottom {
@@ -3672,14 +3732,16 @@ input[type="checkbox"]:checked {
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 120%;
-	background: #DAAD79;
+	background: var(--accent);
 	color: var(--text);
 	border-radius: 16px;
 	padding: 13px 84px;
+	transition: all 0.4s ease;
 }
 
 .contacts__button button:hover {
-	background: #ba9263;
+	background: var(--accent-dark);
+	transition: all 0.4s ease;
 }
 
 .contacts__right {
@@ -3796,6 +3858,7 @@ input[type="checkbox"]:checked {
 	font-size: 16px;
 	font-weight: 200;
 	white-space: nowrap;
+	transition: all 0.4s ease;
 }
 
 .plan_project_buttons .slider_tabs__tab.active {
@@ -3809,6 +3872,7 @@ input[type="checkbox"]:checked {
 	font-weight: 200;
 	cursor: pointer;
 	line-height: 1.3;
+	transition: all 0.4s ease;
 }
 
 .plan_project-img {
@@ -3864,6 +3928,7 @@ input[type="checkbox"]:checked {
 	color: #000;
 	padding: 6px 8px;
 	font-weight: 200;
+	transition: all 0.4s ease;
 }
 
 .second_btn.active button {
@@ -3872,6 +3937,7 @@ input[type="checkbox"]:checked {
 	color: white;
 	box-shadow: 0px 4px 4px 0px #A3A3A31F;
 	border-radius: 12px;
+	transition: all 0.4s ease;
 }
 
 .specifications {
@@ -3944,16 +4010,18 @@ input[type="checkbox"]:checked {
 }
 
 .price_button button {
-	background: #DAAD79;
+	background: var(--accent);
 	color: var(--text);
 	padding: 13px 50px;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 120%;
+	transition: all 0.4s ease;
 }
 
 .price_button button:hover {
 	background: var(--accent-dark);
+	transition: all 0.4s ease;
 }
 
 .info_blocks {
@@ -4182,6 +4250,13 @@ input[type="checkbox"]:checked {
 	line-height: 140%;
 	width: fit-content;
 	flex-shrink: auto;
+	cursor: pointer;
+	transition: all 0.4s ease;
+}
+
+.answer_card.text_block__v3--text:hover {
+	background: #f2f2f266;
+	transition: all 0.4s ease;
 }
 
 .process_line_content {
@@ -4209,14 +4284,22 @@ input[type="checkbox"]:checked {
 	backdrop-filter: blur(21px);
 	-webkit-backdrop-filter: blur(21px);
 	color: white;
+	transition: all 0.4s ease;
+}
+
+.offer_btns .prev_btn:hover {
+	background: #f2f2f266;
+	transition: all 0.4s ease;
 }
 
 .offer_btns .next_btn {
 	background: var(--accent);
+	transition: all 0.4s ease;
 }
 
 .offer_btns .next_btn:hover {
 	background: var(--accent-dark);
+	transition: all 0.4s ease;
 }
 
 .offer_btn {
@@ -4573,6 +4656,10 @@ input[type="checkbox"]:checked {
 		display: flex;
 	}
 
+	.business_about .abs-cover {
+		object-position: 0 10px;
+	}
+
 	.bus_card {
 		padding: 0 16px 24px 16px;
 	}
@@ -4580,6 +4667,8 @@ input[type="checkbox"]:checked {
 	.business_description {
 		width: 100%;
 		max-width: 100%;
+		padding-bottom: 16px;
+		padding-top: 8px;
 	}
 
 	.business .card_project__details h2,
@@ -4598,6 +4687,7 @@ input[type="checkbox"]:checked {
 
 	.cards .about_info__card {
 		padding: 16px;
+		margin-top: 12px;
 	}
 
 	.business_card .about_info__card:last-child {
@@ -4683,7 +4773,7 @@ input[type="checkbox"]:checked {
 .construction_info_card {
 	display: flex;
 	justify-content: space-between;
-	align-items: end;
+	align-items: baseline;
 	padding: 16px 20px;
 }
 
@@ -4720,4 +4810,60 @@ input[type="checkbox"]:checked {
 	.construction_content.grid-4 {
 		grid-template-columns: 1fr;
 	}
+}
+
+.policy_content {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.policy_content h3 {
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 140%;
+	margin-bottom: 40px;
+}
+
+.policy_content p {
+	line-height: 140%;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.policy_content span {
+	font-weight: 400;
+}
+
+.policy_content_title {
+	margin: 24px 0;
+}
+
+.policy_content a {
+	color: var(--accent-dark);
+}
+
+@media(max-width:700px) {
+
+	.policy_content h3 {
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 140%;
+		margin-bottom: 32px;
+	}
+
+	.policy_content p {
+		line-height: 140%;
+		font-size: 14px;
+		font-weight: 300;
+	}
+
+	.policy_content span {
+		font-weight: 400;
+	}
+
+	.policy_content_title {
+		margin: 16px 0;
+	}
+
 }
