@@ -581,7 +581,6 @@ body {
 	.header__inner {
 		background: #131B1FB2;
 		padding: 18px;
-		margin: 0 8px;
 	}
 
 	.header__phone {
@@ -1452,8 +1451,6 @@ span.project_price {
 		justify-content: space-between;
 		align-items: center;
 		flex-shrink: 0;
-		margin-bottom: 24px;
-		margin-top: 10px;
 	}
 
 	.card_project__details {
@@ -2574,6 +2571,7 @@ span.project_price {
 	border-radius: 24px 0 0 24px;
 	padding: 16px 24px;
 	cursor: pointer;
+	transition: all 0.4s ease;
 }
 
 .questions_tab.active p {
@@ -2591,6 +2589,7 @@ span.project_price {
 	background: #139767;
 	color: #FFFEFA;
 	font-weight: 550;
+	transition: all 0.4s ease;
 }
 
 .questions_block__right {
@@ -2603,11 +2602,13 @@ span.project_price {
 
 .question_content {
 	display: none;
+	transition: all 0.4s ease;
 }
 
 .question_content.active {
 	display: flex;
 	height: 100%;
+	transition: all 0.4s ease;
 }
 
 .questions_title_subtitle {
@@ -2710,10 +2711,10 @@ p.questions_text {
 		border: 1px solid var(--accent);
 		border-radius: 24px;
 	}
-
+	
 	.question_content.active {
 		display: flex;
-		animation: fadeIn 0.25s ease;
+		animation: fadeIn 0.4s ease;
 	}
 
 	@keyframes fadeIn {
@@ -4654,6 +4655,8 @@ input[type="checkbox"]:checked {
 
 	.business.card_project__info {
 		display: flex;
+		margin-bottom: 24px;
+		margin-top: 10px;
 	}
 
 	.business_about .abs-cover {

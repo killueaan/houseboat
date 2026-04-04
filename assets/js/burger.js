@@ -11,7 +11,7 @@ burgerBtn.addEventListener('click', () => {
         headerInner.style.background = '#131B1FB2';
         document.body.style.overflow = 'hidden'; 
     } else {
-        headerInner.style.background = '#00000025';
+        headerInner.style.background = '#131B1FB2';
         document.body.style.overflow = '';
     }
 });
