@@ -19,7 +19,7 @@ const swiper = new Swiper('.property-cards-slider', {
 document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.documents-slider', {
         slidesPerView: 1.1,
-        spaceBetween:8,
+        spaceBetween: 8,
     });
 
     function toggleSlider() {
@@ -46,7 +46,7 @@ function initSlider() {
             houseboatSlider = new Swiper(sliderEl, {
                 slidesPerView: 1.2,
                 spaceBetween: 12,
-                
+
             });
         }
     } else {
@@ -63,3 +63,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const modalCookie = document.getElementById('modal-cookie');
+    const closeBtn = document.querySelector('.close_cookie');
+    const agreeBtn = document.querySelector('.btn_cookie');
+
+    function closeModal() {
+        modalCookie.style.display = 'none';
+        localStorage.setItem('cookieConsent', 'true');
+    }
+
+    if (localStorage.getItem('cookieConsent') === 'true') {
+        modalCookie.style.display = 'none';
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    if (agreeBtn) {
+        agreeBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            closeModal();
+        });
+    }
+});

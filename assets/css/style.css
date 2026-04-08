@@ -399,6 +399,99 @@ body {
 
 }
 
+.modal-cookie {
+	background: #131B1F66;
+	backdrop-filter: blur(30px);
+	border: 1px solid #F7F7F733;
+	padding: 20px 24px;
+	position: fixed;
+	z-index: 20;
+	border-radius: 24px;
+	width: 100%;
+	max-width: 621px;
+	bottom: 5%;
+	left: 5%;
+}
+
+.modal-content_cookie {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	color: white;
+	position: relative;
+}
+
+.modal-content_cookie .flex_row {
+	justify-content: space-between;
+	gap: 10px;
+	align-items: flex-end;
+}
+
+.modal-content_cookie h3 {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 120%;
+}
+
+.modal-content_cookie p {
+	font-weight: 200;
+	font-size: 14px;
+	line-height: 140%;
+	max-width: 377px;
+}
+
+.btn_cookie {
+	background: var(--accent);
+	color: var(--text);
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 120%;
+	padding: 12px 32px;
+	border-radius: 24px;
+}
+
+.btn_cookie:hover {
+	background: var(--accent-dark);
+}
+
+.close_cookie {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.close_cookie:hover .icon-bg {
+	stroke: var(--accent-dark);
+}
+
+@media(max-width:700px) {
+	.modal-cookie {
+		right: 8px;
+		left: 8px;
+		padding: 20px 16px;
+		width: fit-content !important;
+	}
+
+	.modal-content_cookie .flex_row {
+		flex-direction: column;
+	}
+
+	.modal-content_cookie h3 {
+		font-size: 16px;
+	}
+
+	.modal-content_cookie p {
+		max-width: 100% !important;
+		font-size: 12px;
+	}
+
+	.btn_cookie {
+		width: 100%;
+		text-align: center;
+	}
+}
+
 .header {
 	position: fixed;
 	top: 0;
@@ -588,8 +681,8 @@ body {
 	}
 
 	.icon-btn svg {
-		width: 20px;
-		height: 20px;
+		width: 26px;
+		height: 26px;
 	}
 
 	.mobile-menu {
@@ -719,7 +812,7 @@ body {
 	line-height: 120%;
 	color: #FFFFFF;
 	position: absolute;
-	right: 52px;
+	right: 75px;
 	bottom: 6px;
 }
 
@@ -965,6 +1058,10 @@ body {
 		order: 3;
 	}
 
+	.advantages-card:nth-child(4) .advantages__subtitle {
+		max-width: 95%;
+	}
+
 	.advantages-card:nth-child(2) img,
 	.advantages-card:nth-child(4) img {
 		display: none;
@@ -1087,6 +1184,10 @@ body {
 }
 
 @media(max-width:1000px) {
+	.dark.text_block__v1.top_pad40 {
+		padding-top: 40px;
+	}
+
 	.text_block__v1--content.grid-3 {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 1fr;
@@ -1298,12 +1399,12 @@ span.project_price {
 
 .card_project:hover .card_project__hover {
 	opacity: 1;
-	transform: translateY(0);
+	transform: translateY(10px);
 	pointer-events: auto;
 }
 
 .card_project__hover_list {
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: 72px 57px 56px 90px;
 	gap: 16px;
 	width: 100%;
 }
@@ -1334,8 +1435,8 @@ span.project_price {
 .card_project--btn {
 	background-color: var(--accent);
 	border-radius: 16px;
-	padding: 12px 32px;
-	font-size: 16px;
+	padding: 11px 30px;
+	font-size: 18px;
 	text-decoration: none;
 	flex-shrink: 0;
 	transition: all 0.4s ease;
@@ -1364,9 +1465,9 @@ span.project_price {
 }
 
 
-@media(max-width:1000px) {
+@media(max-width:1050px) {
 	.card_project--btn {
-		padding: 13px 24px;
+		padding: 11px 24px;
 	}
 }
 
@@ -1475,14 +1576,12 @@ span.project_price {
 		align-items: center;
 		justify-content: space-between;
 		gap: 8px;
-
 		white-space: nowrap;
-		/* ключевая строка */
 	}
 
 	.card_project--btn {
 		border-radius: 14px;
-		padding: 10px 30px;
+		padding: 9px 30px;
 		font-size: 14px;
 	}
 
@@ -1492,7 +1591,6 @@ span.project_price {
 
 	.card_project__hover_list {
 		display: flex;
-		/* вместо grid */
 		gap: 8px;
 		width: auto;
 	}
@@ -1722,6 +1820,10 @@ span.project_price {
 
 	.about_card--info h3 {
 		font-size: 24px;
+	}
+
+	.business.about_info {
+		justify-content: space-between;
 	}
 
 	.about_section .about_content.grid-3 {
@@ -2390,6 +2492,10 @@ span.project_price {
 		height: 264px;
 	}
 
+	.news_company__v1--text {
+		padding: 24px 16px;
+	}
+
 	.news-company-slider {
 		width: 100%;
 		overflow: hidden;
@@ -2400,7 +2506,7 @@ span.project_price {
 	}
 
 	.news-company-slider .swiper-slide {
-		height: 324px;
+		height: fit-content;
 		flex-shrink: 0;
 	}
 
@@ -2475,15 +2581,13 @@ span.project_price {
 .text_block__v5--card {
 	padding: 24px;
 	height: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
 }
 
 .text_block__v5--card h3 {
 	font-weight: 500;
 	font-size: 24px;
 	line-height: 120%;
+	padding-bottom: 12px;
 }
 
 .text_block__v5--card p {
@@ -2548,7 +2652,7 @@ span.project_price {
 	}
 
 	.text_block__v5--card {
-		padding: 24px 16px;
+		padding: 24px 24px 24px 16px;
 	}
 }
 
@@ -2672,7 +2776,6 @@ p.questions_text {
 		gap: 0;
 	}
 
-	/* Список вопросов */
 	.questions_block__tabs {
 		order: 1;
 		max-width: 100%;
@@ -2704,29 +2807,27 @@ p.questions_text {
 	}
 
 	.question_content {
-		padding: 32px 23px;
-		display: none;
+		display: flex;
 		flex-direction: column;
 		background: #161D37;
 		border: 1px solid var(--accent);
 		border-radius: 24px;
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		padding: 0 23px;
+		transition:
+			max-height 0.3s ease,
+			opacity 0.3s ease,
+			padding 0.5s ease;
 	}
-	
+
 	.question_content.active {
-		display: flex;
-		animation: fadeIn 0.4s ease;
-	}
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-			transform: translateY(3px);
-		}
-
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
+		opacity: 1;
+		max-height: 100%;
+		padding: 32px 23px;
+		transition:
+			opacity 0.5s ease,
 	}
 
 	.questions_title_title {
@@ -3209,6 +3310,7 @@ p.questions_text {
 	border-radius: 16px;
 	border: 1px solid transparent;
 	background: #FFFEFA;
+	outline: none;
 	font-size: 14px;
 	line-height: 20px;
 	color: #9A9A9A;
@@ -3368,6 +3470,14 @@ input[type="checkbox"]:checked {
 		gap: 16px;
 	}
 
+	.form_input {
+		font-size: 16px;
+	}
+
+	.form_input::placeholder {
+		font-size: 16px;
+	}
+
 	.form_section__btn {
 		width: 100%;
 		grid-row: auto;
@@ -3398,8 +3508,16 @@ input[type="checkbox"]:checked {
 		font-size: 20px;
 	}
 
+	.excursion .text_block__v7--title h2 {
+		font-size: 24px;
+	}
+
 	.text_block__v7--title h2 br {
 		display: none;
+	}
+
+	.cooperation {
+		max-width: 70% !important;
 	}
 
 	.text_block__v7--title p {
@@ -3415,9 +3533,11 @@ input[type="checkbox"]:checked {
 		gap: 139px;
 		padding: 24px 19px 32px 16px;
 	}
+}
 
+@media(max-width:400px) {
 	.cooperation {
-		max-width: 85% !important;
+		max-width: 80% !important;
 	}
 }
 
@@ -3426,23 +3546,22 @@ input[type="checkbox"]:checked {
 .slider_block__wrapper {
 	width: 100%;
 	display: flex;
-	max-height: 600px;
+	height: 600px;
 	border-radius: 16px;
 	overflow: hidden;
-	position: relative;
 	background: #f0f0f0;
 }
 
 .slider_block__wrapper .swiper-slide {
 	width: 100%;
 	height: 100%;
+	position: relative;
 }
 
 .slider_block__wrapper img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	display: block;
 }
 
 .slider_tabs {
@@ -3581,7 +3700,7 @@ input[type="checkbox"]:checked {
 
 @media(max-width:600px) {
 	.slider_block__wrapper {
-		max-height: 264px;
+		height: 264px;
 	}
 
 	.slider_block--fullscreen {
@@ -3591,7 +3710,7 @@ input[type="checkbox"]:checked {
 		right: 16px;
 	}
 
-	.slider_block__wrapper img {
+	.slider_block__wrapper .swiper-slide {
 		height: 264px;
 	}
 
@@ -3846,11 +3965,11 @@ input[type="checkbox"]:checked {
 .plan_project_buttons {
 	display: flex;
 	align-items: center;
-	padding: 7px 24px 7px 12px;
+	padding: 7px 12px;
 	background: white;
 }
 
-.plan_project_buttons .slider_tabs__tab {
+.plan_project_buttons .plan_tab {
 	padding: 6px 16px;
 	background: transparent;
 	color: var(--text);
@@ -3862,7 +3981,7 @@ input[type="checkbox"]:checked {
 	transition: all 0.4s ease;
 }
 
-.plan_project_buttons .slider_tabs__tab.active {
+.plan_project_buttons .plan_tab.active {
 	background: var(--text);
 	color: white;
 	box-shadow: 0 4px 4px #A3A3A320;
@@ -3878,13 +3997,26 @@ input[type="checkbox"]:checked {
 
 .plan_project-img {
 	position: relative;
-	max-width: 100%;
+	width: 100%;
+	height: 382px;
 }
 
 .plan_project-img img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+.plan-img {
+	display: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 32px;
+}
+
+.plan-img.active {
+	display: block;
 }
 
 .increase_picture {
@@ -3894,35 +4026,8 @@ input[type="checkbox"]:checked {
 	cursor: pointer;
 }
 
-.modal {
+.increase_plan {
 	display: none;
-	position: fixed;
-	z-index: 1000;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.9);
-	animation: fadeIn 0.3s;
-}
-
-.modal.active {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.modal-content {
-	width: auto !important;
-	height: auto !important;
-	max-width: 95% !important;
-	max-height: 95% !important;
-	object-fit: contain;
-	image-rendering: auto;
-	margin: auto;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-	cursor: zoom-in;
 }
 
 .second_btn button {
@@ -3943,7 +4048,7 @@ input[type="checkbox"]:checked {
 
 .specifications {
 	grid-column: span 2;
-	padding: 24px 47px 32px 24px;
+	padding: 24px 30px 32px 24px;
 }
 
 .specifications-title {
@@ -4048,10 +4153,6 @@ input[type="checkbox"]:checked {
 	max-width: 490px;
 }
 
-.icrease_plan {
-	display: none;
-}
-
 @media(max-width:1200px) {
 	.specifications_blocks {
 		grid-template-columns: repeat(4, 1fr);
@@ -4063,11 +4164,15 @@ input[type="checkbox"]:checked {
 		padding: 24px 21px 24px 24px;
 	}
 
+	.plan_project-img {
+		height: 250px;
+	}
+
 	.increase_picture {
 		display: none;
 	}
 
-	.icrease_plan {
+	.increase_plan {
 		display: block;
 	}
 
@@ -4176,6 +4281,24 @@ input[type="checkbox"]:checked {
 		max-width: 100%;
 	}
 
+}
+
+@media(max-width:800px) {
+	.plan_project-img {
+		height: 200px;
+	}
+}
+
+@media(max-width:650px) {
+	.plan_project-img {
+		height: 150px;
+	}
+}
+
+@media(max-width:500px) {
+	.plan_project-img {
+		height: 105px;
+	}
 }
 
 /* offer index*/
@@ -4698,7 +4821,7 @@ input[type="checkbox"]:checked {
 	}
 
 	.card_project--btn {
-		padding: 13px 20px;
+		padding: 10px 20px;
 	}
 
 	.cards .about_info__card p {
@@ -4785,6 +4908,7 @@ input[type="checkbox"]:checked {
 	font-size: 14px;
 	line-height: 120%;
 	opacity: 0.6;
+	padding-left: 20px;
 }
 
 .long_line {
@@ -4812,6 +4936,10 @@ input[type="checkbox"]:checked {
 @media(max-width:700px) {
 	.construction_content.grid-4 {
 		grid-template-columns: 1fr;
+	}
+
+	.construction_info_card {
+		align-items: end;
 	}
 }
 

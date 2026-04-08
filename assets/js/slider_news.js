@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 800) {
             if (!swiperInstance) {
                 swiperInstance = new Swiper('.news-company-slider', {
-                    slidesPerView: 1.3,
+                    slidesPerView: 1.2,
                     spaceBetween: 16,
                     pagination: {
                         el: '.swiper-pagination',

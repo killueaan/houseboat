@@ -9,6 +9,7 @@
     <link rel="stylesheet" id="houseboat-style-css" href="./assets/css/style.css" media="all">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css" />
     <script src="./assets/js/slider.js" defer></script>
     <script src="./assets/js/slider_news.js" defer></script>
 </head>
@@ -16,7 +17,7 @@
 <body
     class="wp-singular page-template page-template-template-parts page-template-pages page-template-company-page-template page-template-template-partspagescompany-page-template-php page page-id-15 wp-theme-houseboat">
     <div id="page" class="site">
-         <header class="header">
+        <header class="header">
             <div class="container">
                 <div class="header__inner">
                     <div class="header__top">
@@ -122,7 +123,6 @@
 
             <!-- plan -->
             <section class="plan_project--section container top_pad">
-
                 <div class="plan_project card">
                     <div class="plan_project_top">
                         <div class="plan_project-info">
@@ -131,12 +131,10 @@
                         </div>
                         <div class="plan_project_all__buttons flex_row">
                             <div class="plan_project_buttons card gap_16">
-                                <button class="slider_tabs__tab active">1 этаж</button>
-                                <button class="slider_tabs__tab">2 этаж</button>
-
+                                <button class="plan_tab active" data-floor="1">1 этаж</button>
+                                <button class="plan_tab" data-floor="2">2 этаж</button>
                             </div>
-                            <div class="icrease_plan" id="zoomBtn1">
-
+                            <div class="increase_plan" id="zoomBtn1">
                                 <svg width="45" height="45" viewBox="0 0 45 45" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <rect width="45" height="45" rx="22.5" fill="white" />
@@ -145,14 +143,15 @@
                                         stroke="#0D1122" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
-
                             </div>
                         </div>
                     </div>
                     <div class="plan_project-img">
-                        <img src="assets/images/mayak/plan.png" alt="План" id="img">
+                        <img src="assets/images/mayak/plan.png" class="plan-img active" data-floor="1"
+                            data-pswp-width="2000" data-pswp-height="800" alt="1 этаж">
+                        <img src="assets/images/mayak/1.png" class="plan-img" data-floor="2" data-pswp-width="2000"
+                            data-pswp-height="800" alt="2 этаж">
                         <div class="increase_picture" id="zoomBtn2">
-
                             <svg width="45" height="45" viewBox="0 0 45 45" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <rect width="45" height="45" rx="22.5" fill="#0D1122" />
@@ -160,15 +159,65 @@
                                     d="M25.7021 29.5H27.4149C27.9679 29.5 28.4983 29.2803 28.8893 28.8893C29.2803 28.4983 29.5 27.9679 29.5 27.4149V25.7021M29.5 19.2979V17.5851C29.5 17.0321 29.2803 16.5017 28.8893 16.1107C28.4983 15.7197 27.9679 15.5 27.4149 15.5H25.7021M19.2979 29.5H17.5851C17.0321 29.5 16.5017 29.2803 16.1107 28.8893C15.7197 28.4983 15.5 27.9679 15.5 27.4149V25.7021M15.5 19.2979V17.5851C15.5 17.0321 15.7197 16.5017 16.1107 16.1107C16.5017 15.7197 17.0321 15.5 17.5851 15.5H19.2979"
                                     stroke="#EAB789" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-
-                        </div>
-
-                        <div id="modal" class="modal">
-                            <img class="modal-content" id="imgFull">
                         </div>
                     </div>
                 </div>
             </section>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css" />
+
+            <script type="module">
+                import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.esm.min.js';
+                import PhotoSwipe from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.esm.min.js';
+
+                let currentImage = document.querySelector('.plan-img.active');
+
+                const tabs = document.querySelectorAll('.plan_tab');
+                const imgs = document.querySelectorAll('.plan-img');
+
+                tabs.forEach((tab, i) => {
+                    tab.addEventListener('click', () => {
+                        tabs.forEach(t => t.classList.remove('active'));
+                        imgs.forEach(img => img.classList.remove('active'));
+                        tab.classList.add('active');
+                        imgs[i].classList.add('active');
+                        currentImage = imgs[i];
+                    });
+                });
+
+                const lightbox = new PhotoSwipeLightbox({
+                    pswpModule: PhotoSwipe,
+                    showHideAnimationType: 'fade',
+                    zoomAnimationDuration: 300,
+                    initialZoomLevel: 'fit',
+                    secondaryZoomLevel: 1.5,
+                    maxZoomLevel: 4,
+                    imageClickAction: 'zoom',
+                    tapAction: 'toggle-controls',
+                    doubleTapAction: 'zoom',
+                    arrowKeys: true,
+                    wheelToZoom: true,
+                });
+
+                lightbox.addFilter('numItems', () => 1);
+                lightbox.addFilter('itemData', () => {
+                    return {
+                        src: currentImage.src,
+                        w: parseInt(currentImage.dataset.pswpWidth) || 2000,
+                        h: parseInt(currentImage.dataset.pswpHeight) || 800,
+                        alt: currentImage.alt
+                    };
+                });
+
+                lightbox.init();
+
+                const zoomBtns = document.querySelectorAll('#zoomBtn1, #zoomBtn2');
+                zoomBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        currentImage = document.querySelector('.plan-img.active');
+                        lightbox.loadAndOpen(0);
+                    });
+                });
+            </script>
             <section class="plan_section container grid-3 ">
                 <div class="specifications card">
                     <h4 class="specifications-title title_plan">Характеристики</h4>
@@ -250,6 +299,50 @@
                 <div class="swiper slider_block__wrapper">
                     <div class="slider_block__wrapper--content swiper-wrapper">
                         <div class="swiper-slide">
+                            <img src="./assets/images/mayak/v2_1.png" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/mayak/house.svg" alt="Дом 2">
+                        </div>
+                    </div>
+                    <div class="slider_block__wrapper--content swiper-wrapper active">
+                        <div class="swiper-slide">
                             <img src="./assets/images/mayak/house.svg" alt="Дом 1">
                         </div>
                         <div class="swiper-slide">
@@ -315,7 +408,7 @@
                     </div>
 
                     <div class="swiper_counter">
-                        <span class="current">1</span>/<span class="total">14</span>
+                        <span class="current"></span>/<span class="total"></span>
                     </div>
 
                     <button class="slider_block--fullscreen" aria-label="На весь экран">
@@ -327,6 +420,174 @@
                     </button>
                 </div>
             </section>
+
+            <script type="module">
+                import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.esm.min.js';
+                import PhotoSwipe from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.esm.min.js';
+
+                let currentSwiper = null;
+                let currentLightbox = null;
+                let currentImagesData = [];
+
+                function getActiveWrapper() {
+                    const wrappers = document.querySelectorAll('.slider_block__wrapper--content');
+                    return Array.from(wrappers).find(wrapper => wrapper.classList.contains('active')) || wrappers[1];
+                }
+
+                function getImagesData() {
+                    const activeWrapper = getActiveWrapper();
+                    const slides = activeWrapper.querySelectorAll('.swiper-slide img');
+                    return Array.from(slides).map(img => ({
+                        src: img.src,
+                        w: parseInt(img.dataset.pswpWidth) || 1200,
+                        h: parseInt(img.dataset.pswpHeight) || 800,
+                        alt: img.alt || 'Изображение галереи'
+                    }));
+                }
+
+                function updateCounter(swiper) {
+                    const currentSpan = document.querySelector('.swiper_counter .current');
+                    const totalSpan = document.querySelector('.swiper_counter .total');
+
+                    if (currentSpan && totalSpan) {
+                        const totalSlides = swiper.slides.filter(slide => !slide.classList.contains('swiper-slide-duplicate')).length;
+                        const currentSlide = swiper.realIndex + 1;
+
+                        currentSpan.textContent = currentSlide;
+                        totalSpan.textContent = totalSlides;
+                    }
+                }
+
+                function initSwiper() {
+                    if (currentSwiper) {
+                        currentSwiper.destroy(true, true);
+                    }
+
+                    const activeWrapper = getActiveWrapper();
+                    if (!activeWrapper) return;
+
+                    currentSwiper = new Swiper('.slider_block__wrapper', {
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                        loop: true,
+                        loopedSlides: 1,
+                        speed: 600,
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        on: {
+                            init: function () {
+                                updateCounter(this);
+                            },
+                            slideChange: function () {
+                                updateCounter(this);
+                            },
+                        },
+                    });
+
+                    return currentSwiper;
+                }
+
+                function initPhotoSwipe() {
+                    if (currentLightbox) {
+                        currentLightbox.destroy();
+                    }
+
+                    currentImagesData = getImagesData();
+
+                    currentLightbox = new PhotoSwipeLightbox({
+                        pswpModule: PhotoSwipe,
+                        showHideAnimationType: 'fade',
+                        zoomAnimationDuration: 300,
+                        initialZoomLevel: 'fit',
+                        secondaryZoomLevel: 1.5,
+                        maxZoomLevel: 4,
+                        imageClickAction: 'zoom',
+                        tapAction: 'toggle-controls',
+                        doubleTapAction: 'zoom',
+                        arrowKeys: true,
+                        wheelToZoom: true,
+                    });
+
+                    currentLightbox.addFilter('numItems', () => currentImagesData.length);
+                    currentLightbox.addFilter('itemData', (itemData, index) => currentImagesData[index]);
+                    currentLightbox.init();
+                }
+
+                function addImageClickHandlers() {
+                    const activeWrapper = getActiveWrapper();
+                    const images = activeWrapper.querySelectorAll('.swiper-slide img');
+
+                    images.forEach(img => {
+                        img.style.cursor = 'pointer';
+                        img.removeEventListener('click', img._clickHandler);
+                        img._clickHandler = () => {
+                            if (currentSwiper && currentLightbox) {
+                                const realIndex = currentSwiper.realIndex;
+                                currentLightbox.loadAndOpen(realIndex);
+                            }
+                        };
+                        img.addEventListener('click', img._clickHandler);
+                    });
+                }
+
+                function initTabs() {
+                    const tabs = document.querySelectorAll('.slider_tabs__tab');
+                    const wrappers = document.querySelectorAll('.slider_block__wrapper--content');
+
+                    tabs.forEach((tab, index) => {
+                        tab.addEventListener('click', () => {
+                            if (tab.classList.contains('active')) return;
+
+                            tabs.forEach(t => t.classList.remove('active'));
+                            tab.classList.add('active');
+
+                            wrappers.forEach((wrapper, i) => {
+                                if (i === index) {
+                                    wrapper.classList.add('active');
+                                } else {
+                                    wrapper.classList.remove('active');
+                                }
+                            });
+
+                            setTimeout(() => {
+                                initSwiper();
+                                initPhotoSwipe();
+                                addImageClickHandlers();
+                            }, 100);
+                        });
+                    });
+                }
+
+                function initFullscreen() {
+                    const fullscreenBtn = document.querySelector('.slider_block--fullscreen');
+                    const sliderWrapper = document.querySelector('.slider_block__wrapper');
+                    if (fullscreenBtn && sliderWrapper) {
+                        fullscreenBtn.addEventListener('click', () => {
+                            if (!document.fullscreenElement) {
+                                sliderWrapper.requestFullscreen();
+                            } else {
+                                document.exitFullscreen();
+                            }
+                        });
+                    }
+                }
+
+                function init() {
+                    initSwiper();
+                    initPhotoSwipe();
+                    initTabs();
+                    initFullscreen();
+                    addImageClickHandlers();
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', init);
+                } else {
+                    init();
+                }
+            </script>
 
             <section class="section news_company__v1 container top_pad40 btm_pad40">
                 <div class="title_content gap_4">
@@ -536,8 +797,8 @@
                             mz@cboat.ru
                         </a>
                     </div>
-
-                    <a href="https://ontape-design.ru/" class="footer__devbadge remove">
+                    <a href="https://ontape-design.ru/" target="_blank" rel="noopener noreferrer"
+                        class="footer__devbadge remove">
                         <div class="footer__devtext">
                             Разработано<br>
                             веб-студией
@@ -579,7 +840,8 @@
                     <div class="footer__addr">ПН–ПТ 09–20 МСК</div>
                 </div>
 
-                <a href="https://ontape-design.ru/" class="footer__devbadge mobile--figma">
+                <a href="https://ontape-design.ru/" target="_blank" rel="noopener noreferrer"
+                    class="footer__devbadge mobile--figma">
                     <div class="footer__devtext">
                         Разработано<br>
                         веб-студией
