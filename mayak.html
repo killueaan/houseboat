@@ -297,7 +297,7 @@
                     <h2 class="title">галерея</h2>
                 </div>
                 <div class="swiper slider_block__wrapper">
-                    <div class="slider_block__wrapper--content swiper-wrapper">
+                    <div class="slider_block__wrapper--content swiper-wrapper active">
                         <div class="swiper-slide">
                             <img src="./assets/images/mayak/v2_1.png" alt="Дом 1">
                         </div>
@@ -341,7 +341,7 @@
                             <img src="./assets/images/mayak/house.svg" alt="Дом 2">
                         </div>
                     </div>
-                    <div class="slider_block__wrapper--content swiper-wrapper active">
+                    <div class="slider_block__wrapper--content swiper-wrapper">
                         <div class="swiper-slide">
                             <img src="./assets/images/mayak/house.svg" alt="Дом 1">
                         </div>
@@ -387,8 +387,8 @@
                     </div>
 
                     <div class="slider_tabs">
-                        <button class="slider_tabs__tab">Интерьер</button>
-                        <button class="slider_tabs__tab active">Экстерьер</button>
+                        <button class="slider_tabs__tab active">Интерьер</button>
+                        <button class="slider_tabs__tab">Экстерьер</button>
                     </div>
 
                     <div class="swiper-button-prev"><svg width="24" height="24" viewBox="0 0 18 15" fill="none"
@@ -431,11 +431,12 @@
 
                 function getActiveWrapper() {
                     const wrappers = document.querySelectorAll('.slider_block__wrapper--content');
-                    return Array.from(wrappers).find(wrapper => wrapper.classList.contains('active')) || wrappers[1];
+                    return Array.from(wrappers).find(wrapper => wrapper.classList.contains('active')) || wrappers[0];
                 }
 
                 function getImagesData() {
                     const activeWrapper = getActiveWrapper();
+                    if (!activeWrapper) return [];
                     const slides = activeWrapper.querySelectorAll('.swiper-slide img');
                     return Array.from(slides).map(img => ({
                         src: img.src,
@@ -445,26 +446,34 @@
                     }));
                 }
 
-                function updateCounter(swiper) {
+                function updateCounter() {
                     const currentSpan = document.querySelector('.swiper_counter .current');
                     const totalSpan = document.querySelector('.swiper_counter .total');
 
-                    if (currentSpan && totalSpan) {
-                        const totalSlides = swiper.slides.filter(slide => !slide.classList.contains('swiper-slide-duplicate')).length;
-                        const currentSlide = swiper.realIndex + 1;
-
+                    if (currentSpan && totalSpan && currentSwiper) {
+                        const totalSlides = currentSwiper.slides.filter(slide =>
+                            !slide.classList.contains('swiper-slide-duplicate')).length;
+                        const currentSlide = currentSwiper.realIndex + 1;
                         currentSpan.textContent = currentSlide;
                         totalSpan.textContent = totalSlides;
                     }
                 }
 
-                function initSwiper() {
+                function destroySwiper() {
                     if (currentSwiper) {
                         currentSwiper.destroy(true, true);
+                        currentSwiper = null;
                     }
+                }
+
+                function initSwiper() {
+                    destroySwiper();
 
                     const activeWrapper = getActiveWrapper();
                     if (!activeWrapper) return;
+
+                    // Временно показываем активную обертку
+                    activeWrapper.style.display = 'block';
 
                     currentSwiper = new Swiper('.slider_block__wrapper', {
                         slidesPerView: 1,
@@ -478,10 +487,10 @@
                         },
                         on: {
                             init: function () {
-                                updateCounter(this);
+                                updateCounter();
                             },
                             slideChange: function () {
-                                updateCounter(this);
+                                updateCounter();
                             },
                         },
                     });
@@ -492,9 +501,11 @@
                 function initPhotoSwipe() {
                     if (currentLightbox) {
                         currentLightbox.destroy();
+                        currentLightbox = null;
                     }
 
                     currentImagesData = getImagesData();
+                    if (currentImagesData.length === 0) return;
 
                     currentLightbox = new PhotoSwipeLightbox({
                         pswpModule: PhotoSwipe,
@@ -517,8 +528,9 @@
 
                 function addImageClickHandlers() {
                     const activeWrapper = getActiveWrapper();
-                    const images = activeWrapper.querySelectorAll('.swiper-slide img');
+                    if (!activeWrapper) return;
 
+                    const images = activeWrapper.querySelectorAll('.swiper-slide img');
                     images.forEach(img => {
                         img.style.cursor = 'pointer';
                         img.removeEventListener('click', img._clickHandler);
@@ -530,6 +542,12 @@
                         };
                         img.addEventListener('click', img._clickHandler);
                     });
+                }
+
+                function refreshGallery() {
+                    initSwiper();
+                    initPhotoSwipe();
+                    addImageClickHandlers();
                 }
 
                 function initTabs() {
@@ -551,35 +569,29 @@
                                 }
                             });
 
-                            setTimeout(() => {
-                                initSwiper();
-                                initPhotoSwipe();
-                                addImageClickHandlers();
-                            }, 100);
+                            // Обновляем всё после переключения
+                            refreshGallery();
                         });
                     });
                 }
 
-                function initFullscreen() {
-                    const fullscreenBtn = document.querySelector('.slider_block--fullscreen');
-                    const sliderWrapper = document.querySelector('.slider_block__wrapper');
-                    if (fullscreenBtn && sliderWrapper) {
-                        fullscreenBtn.addEventListener('click', () => {
-                            if (!document.fullscreenElement) {
-                                sliderWrapper.requestFullscreen();
-                            } else {
-                                document.exitFullscreen();
+                // Кнопка полноэкранного режима
+                function initZoomButton() {
+                    const zoomBtn = document.querySelector('.slider_block--fullscreen');
+                    if (zoomBtn) {
+                        zoomBtn.addEventListener('click', () => {
+                            if (currentSwiper && currentLightbox) {
+                                const realIndex = currentSwiper.realIndex;
+                                currentLightbox.loadAndOpen(realIndex);
                             }
                         });
                     }
                 }
 
                 function init() {
-                    initSwiper();
-                    initPhotoSwipe();
+                    refreshGallery();
                     initTabs();
-                    initFullscreen();
-                    addImageClickHandlers();
+                    initZoomButton();
                 }
 
                 if (document.readyState === 'loading') {

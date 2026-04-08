@@ -3,12 +3,12 @@
 //     function updateCounter(swiper) {
 //     const currentSpan = document.querySelector('.swiper_counter .current');
 //     const totalSpan = document.querySelector('.swiper_counter .total');
-    
+
 //     if (currentSpan && totalSpan) {
 //         // Получаем количество реальных слайдов (без дублей)
 //         const totalSlides = swiper.slides.filter(slide => !slide.classList.contains('swiper-slide-duplicate')).length;
 //         const currentSlide = swiper.realIndex + 1;
-        
+
 //         currentSpan.textContent = currentSlide;
 //         totalSpan.textContent = totalSlides;
 //     }
@@ -33,12 +33,22 @@
 //         },
 //     });
 
-//     const tabs = document.querySelectorAll('.slider_tabs__tab');
-//     tabs.forEach(tab => {
-//         tab.addEventListener('click', function () {
-//             tabs.forEach(t => t.classList.remove('active'));
-//             this.classList.add('active');
-//             console.log('Выбрана категория:', this.textContent);
+// const tabs = document.querySelectorAll('.slider_tabs__tab');
+// const wrappers = document.querySelectorAll('.slider_block__wrapper--content');
+
+// tabs.forEach((tab, index) => {
+//     tab.addEventListener('click', () => {
+//         // Убираем активный класс у всех табов
+//         tabs.forEach(t => t.classList.remove('active'));
+//         // Добавляем активный класс текущему
+//         tab.classList.add('active');
+
+//         // Скрываем все обертки
+//         wrappers.forEach(wrapper => {
+//             wrapper.classList.remove('active');
 //         });
+//         // Показываем нужную обертку
+//         wrappers[index].classList.add('active');
 //     });
+// });
 // });
